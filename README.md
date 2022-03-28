@@ -1,4 +1,4 @@
-**Harjoitystyö**
+**Harjoitustyö**
 
 *Viikko 1*
 

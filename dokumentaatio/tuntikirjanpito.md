@@ -2,7 +2,7 @@
 
 | päivä | aika | mitä tein  |
 | :----:|:-----| :-----|
-| 00.0. | 0    | asd |
-| 00.0. | 0    | asd |
-| 00.0. | 0    | asd |
+| 29.3. | 1    | Vaatimusmäärittelyn laatiminen |
+|       |      |     |
+|       |      |     |
 |       |      |     |

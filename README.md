@@ -8,8 +8,6 @@
 
 [komentorivi.txt](https://github.com/weverhall/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-vielä muutos omalla koneella (tehtävä 16)
-
 *Viikko 2*
 
 [vaativuusmäärittely](https://github.com/weverhall/ot-harjoitustyo/blob/master/dokumentaatio/vaativuusmaarittely.md)

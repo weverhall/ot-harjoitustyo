@@ -10,6 +10,6 @@
 
 *Viikko 2*
 
-[vaativuusmäärittely](https://github.com/weverhall/ot-harjoitustyo/blob/master/dokumentaatio/vaativuusmaarittely.md)
+[vaatimusmäärittely](https://github.com/weverhall/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [tuntikirjanpito](https://github.com/weverhall/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)

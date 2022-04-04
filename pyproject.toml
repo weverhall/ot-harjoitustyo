@@ -1,16 +1,14 @@
 [tool.poetry]
-name = "unicafe"
+name = "ot-harjoitustyo"
 version = "0.1.0"
-description = ""
-authors = ["Kalle Ilves <kalle.ilves@helsinki.fi>"]
+description = "resepti-poetry"
+authors = ["weverhall <weverhall@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 invoke = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.5"
-coverage = "^6.0.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

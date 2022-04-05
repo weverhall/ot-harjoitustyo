@@ -13,12 +13,3 @@ class RecipesService:
         user = self._user)
 
         return self._repoPlaceholder.create(recipe)
-
-
-    def login(self, username, password):
-        user = self._placeholderRepo...
-
-        return user
-
-    def create_user(self, username, password):
-        

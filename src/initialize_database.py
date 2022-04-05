@@ -1,24 +1,22 @@
 from database_connection import get_database_connection
 
-
 def create_tables(connection):
-    cursor = connection.cursor()
+    cur = connection.cursor()
 
-    cursor.execute('''
+    cur.execute('''
         CREATE TABLE IF NOT EXISTS Recipes (
-            id INTEGER PRIMARY KEY,
+            id INTEGER PRIMARY KEY NOT NULL,
             title TEXT,
             instructions TEXT
-
         );
     ''')
 
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS Ingredients (
-            name TEXT PRIMARY KEY,
-            recipe_id INTEGER REFERENCES Recipes
-        );
-    ''')
+    #cur.execute('''
+    #    CREATE TABLE IF NOT EXISTS Ingredients (
+    #        name TEXT PRIMARY KEY,
+    #        recipe_id INTEGER REFERENCES Recipes(id)
+    #    );
+    #''')
 
 
     connection.commit()
@@ -26,7 +24,6 @@ def create_tables(connection):
 
 def initialize_database():
     connection = get_database_connection()
-
     create_tables(connection)
 
 

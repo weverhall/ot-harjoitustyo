@@ -3,14 +3,11 @@ import sqlite3
 class RecipesRepository:
     def __init__ (self, connection):
         self.connection = connection
-        self.cursor = self.connection.cursor()
+        self.cur = self.connection.cursor()
 
-    def fetch_recipes(self):
-        self.cursor.execute('SELECT * FROM Recipes')
+    def add_recipe(self, title, instructions):
+        self.cur.execute
+        ('INSERT INTO Recipes(title, instructions) VALUES (:title, :instructions)', 
+        {'title':title, 'instructions':instructions})
 
-        return self.cursor.fetchall()
-
-    def fetch_ingredients(self):
-        self.cursor.execute('SELECT * FROM Ingredients')
-
-        return self.cursor.fetchall()
+        self.connection.commit()

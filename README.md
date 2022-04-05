@@ -1,15 +1,5 @@
 **Harjoitustyö**
 
-*Viikko 1*
+*Viikko 3*
 
-:)
-
-[gitlog.txt](https://github.com/weverhall/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/weverhall/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-*Viikko 2*
-
-[vaatimusmäärittely](https://github.com/weverhall/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-
-[tuntikirjanpito](https://github.com/weverhall/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+Otan tästä viikosta 0p ja todennäköisesti vaihdan aihetta (tehden vaatimusmäärittelyn uudelleen). Tuntuu, että kurssi voisi sujua paremmin, jos valitsisin ei-niin-tietokantapohjaisen projektin.

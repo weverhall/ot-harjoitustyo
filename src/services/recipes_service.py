@@ -6,4 +6,5 @@ class RecipesService:
     def __init__ (self):
         self.recipes_repository = RecipesRepository(get_database_connection())
 
-    #def create(self, title, ingredients):
+    def add_recipe (self, title, instructions):
+        self.recipes_repository.add_recipe(title, instructions)

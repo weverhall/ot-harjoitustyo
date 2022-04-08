@@ -5,18 +5,17 @@ def create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS Recipes (
+        CREATE TABLE IF NOT EXISTS domains (
             id INTEGER PRIMARY KEY,
-            title TEXT,
-            instructions TEXT
+            name TEXT
 
         );
     ''')
 
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS Ingredients (
+        CREATE TABLE IF NOT EXISTS ips (
             name TEXT PRIMARY KEY,
-            recipe_id INTEGER REFERENCES Recipes
+            domain_id INTEGER REFERENCES domains
         );
     ''')
 

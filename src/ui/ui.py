@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from ui.lookup_view import LookupView
 
 
@@ -25,10 +24,3 @@ class UI:
             self.handle_lookup_view
         )
         self._current_view.grid()
-=======
-from tkinter import Tk, ttk
-
-class UI:
-    def __init__(self, root):
-        self._root = root
->>>>>>> 4aaace358a7d0c2ff4fec776779a4620c9ff7304

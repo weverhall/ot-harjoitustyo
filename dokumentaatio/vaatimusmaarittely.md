@@ -30,3 +30,5 @@ Käyttäjärooleja voisi olla vain yksi tai tämän lisäksi toinenkin, laajemmi
 - Mahdollisuus jakaa reseptejä suoraan toiselle käyttäjälle
 - Hyödyllisten lähteiden tarjoaminen reseptien etsimiseen
 - Tilastotiedot omista tai muiden resepteistä (esim. ainesten yleisyys)
+
+#WIP

@@ -4,6 +4,7 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
 
 - Domainin IP- ja saatavuushaku
 - Oman IP- ja MAC-osoitteen nouto
+- ...lisäominaisuudet WIP :)
 
 ## Dokumentaatio
 
@@ -11,24 +12,29 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 
-## Asennus
+## Asennus ja käynnistys
 
-Asenna ensin sovelluksen riippuvuudet, sitten käynnistä se komennoilla:
+Asenna riippuvuudet ja käynnistä sovellus:
 
 ```bash
 poetry install
 poetry run invoke start
 ```
+Tarkista myös, että Python-versiosi on 3.8 tai uudempi:
+
+```bash
+python3 --version
+```
 
 ## Testaus
 
-Testit suoritetaan komennolla:
+Suorita testit:
 
 ```bash
 poetry run invoke test
 ```
 
-Testikattavuusraportti luodaan komennolla:
+Luo testikattavuusraportti htmlcov-hakemistoon:
 
 ```bash
 poetry run invoke coverage-report
@@ -36,7 +42,7 @@ poetry run invoke coverage-report
 
 ## Pylint
 
-[Pylint-tiedoston](./.pylintrc) määrittelemät tarkistukset suoritetaan komennolla:
+Tee [Pylint-tiedoston](./.pylintrc) määrittelemät kooditarkistukset:
 
 ```bash
 poetry run invoke lint

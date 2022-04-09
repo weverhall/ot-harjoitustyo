@@ -12,7 +12,13 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 
-## Asennus ja käynnistys
+## Lataus, asennus ja käynnistys
+
+Lataa sovellus koneellesi:
+
+```bash
+git clone https://github.com/weverhall/ot-harjoitustyo.git
+```
 
 Asenna riippuvuudet ja käynnistä sovellus:
 
@@ -20,6 +26,7 @@ Asenna riippuvuudet ja käynnistä sovellus:
 poetry install
 poetry run invoke start
 ```
+
 Tarkista myös, että Python-versiosi on 3.8 tai uudempi:
 
 ```bash

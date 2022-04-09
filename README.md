@@ -33,3 +33,11 @@ Testikattavuusraportti luodaan komennolla:
 ```bash
 poetry run invoke coverage-report
 ```
+
+### Pylint
+
+[Pylint-tiedoston](./.pylintrc) määrittelemät tarkistukset suoritetaan komennolla:
+
+```bash
+poetry run invoke lint
+```

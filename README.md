@@ -12,13 +12,7 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 
-## Lataus, asennus ja käynnistys
-
-Lataa sovellus koneellesi:
-
-```bash
-git clone https://github.com/weverhall/ot-harjoitustyo.git
-```
+## Asennus ja käynnistys
 
 Asenna riippuvuudet ja käynnistä sovellus:
 

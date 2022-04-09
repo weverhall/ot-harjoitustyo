@@ -13,11 +13,10 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
 
 ## Asennus
 
-Asenna riippuvuudet, alusta ja käynnistä komennoilla:
+Asenna ensin sovelluksen riippuvuudet, sitten käynnistä se komennoilla:
 
 ```bash
 poetry install
-poetry run invoke build
 poetry run invoke start
 ```
 
@@ -29,7 +28,7 @@ Testit suoritetaan komennolla:
 poetry run invoke test
 ```
 
-Testikattavuusraportin voi generoida komennolla:
+Testikattavuusraportti tehdään komennolla:
 
 ```bash
 poetry run invoke coverage-report

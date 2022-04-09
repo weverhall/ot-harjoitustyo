@@ -6,7 +6,7 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja.
 
 ## Sovelluksen toiminnallisuus
 
-### Kirjautuminen (jos sovelluksen kannalta tarpeellista)
+### Käyttäjät
 
 - Uniikin käyttäjätunnuksen luonti käyttäjänimellä ja salasanalla
   - Kaikilla yksi, samantasoinen käyttäjärooli tai tämän lisäksi toinenkin, laajemmilla oikeuksilla toimiva pääkäyttäjä

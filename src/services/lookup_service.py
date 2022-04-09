@@ -15,7 +15,7 @@ class NetworkLookup:
             else:
                 try:
                     site_ip = str(iplookup.iplookup(url)[0])
-                    return f"Domain is already taken, and its (or proxy's) IP is {site_ip}"
+                    return f"Domain is already taken (host/proxy IP: {site_ip})"
                 except:
                     return "Domain is already taken"
 
@@ -33,11 +33,11 @@ class NetworkLookup:
         or ip[:7] == "172.19." or ip[:7] == "172.30."\
         or ip[:7] == "172.31." or ip[:5] == "172.2"\
         or ip[:3] == "10.":            
-            return f"Your IP address {ip} is private"
+            return f"IP: {ip} (private)"
         elif ip == "127.0.0.1":
             return "Failed to fetch IP address"
         else:
-            return f"Your IP address {ip} is public"
+            return f"IP: {ip} (public)"
 
     def find_own_mac(self):
         formatted_mac = ":".join(['{:02x}'.format((uuid.getnode() >> i) & 0xff)
@@ -46,6 +46,4 @@ class NetworkLookup:
         if validators.mac_address(formatted_mac) != True:
             return "Failed to fetch MAC address"
         else:
-            return f"Your MAC address is {formatted_mac}"
-
-#print(NetworkLookup().domain_lookup("hs.fi"))
+            return f"MAC: {formatted_mac}"

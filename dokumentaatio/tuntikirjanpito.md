@@ -2,10 +2,14 @@
 
 | päivä | aika | mitä tein  |
 | :----:|:-----| :-----|
-| 29.3. |   1  | Vaatimusmäärittelyn laatiminen |
-|  4.4  |   5  | Ohjeiden tarkempi tutkinta ja suunnittelua |
-|  5.4  |  10  | Alustava luokkien runko |
-|  6.4  |  12  |     |
-|  7.4  |   8  |     |
-|  8.4  |   5  |     |
-|  yht. | =41  |     |
+| 29.3. |   1  | vaatimusmäärittelyn laadinta |
+|  4.4  |   5  | matskujen tarkempi tutkinta ja suunnittelua |
+|  5.4  |  10  | alustava luokkien runko ja sovelluslogiikkaa |
+|  6.4  |  12  | projektin vaihto, uuden suunnittelua, ja yksinkertaisen sovelluslogiikan sekä käyttöliittymän luonti |
+|  7.4  |   8  | käyttöliittymään asianmukaiset luokat, sovelluslogiikan parantelua |
+|  8.4  |   4  | tiedostojen ja luokkien rungon selvittelyä |
+|  9.4  |      | uutta toiminnallisuutta, dokumentaation päivitys uuteen projuun |
+|       |      |
+|       |      |
+|       |      |
+|  yht. | =40  |

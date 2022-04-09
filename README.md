@@ -1,4 +1,4 @@
-# Network Lookup App
+# NetLookApp
 
 Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
 

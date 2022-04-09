@@ -34,7 +34,7 @@ Testikattavuusraportti luodaan komennolla:
 poetry run invoke coverage-report
 ```
 
-### Pylint
+## Pylint
 
 [Pylint-tiedoston](./.pylintrc) määrittelemät tarkistukset suoritetaan komennolla:
 

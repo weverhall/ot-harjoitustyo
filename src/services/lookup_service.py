@@ -1,20 +1,25 @@
 import uuid, socket, sys, whois, validators
+from iplookup import iplookup
 
 
-class NetworkLookup:   
+class NetworkLookup:
     def domain_lookup(self, url):
         if validators.domain(url) != True:
-            return "Invalid domain name"
+            return "Invalid domain name, try again"
         else:
             try:
-                if whois.whois(str(url)).domain_name == None:
+                if whois.whois(url).domain_name == None:
                     sys.exit()  
             except:
                 return "Domain is available!"
             else:
-                return "Domain is already taken"
+                try:
+                    site_ip = str(iplookup.iplookup(url)[0])
+                    return f"Domain is already taken, and its (or proxy's) IP is {site_ip}"
+                except:
+                    return "Domain is already taken"
 
-    def find_ip(self):
+    def find_own_ip(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         try:       
             s.connect(("10.255.255.255", 1))
@@ -34,7 +39,7 @@ class NetworkLookup:
         else:
             return f"Your IP address {ip} is public"
 
-    def find_mac(self):
+    def find_own_mac(self):
         formatted_mac = ":".join(['{:02x}'.format((uuid.getnode() >> i) & 0xff)
         for i in range(0,8*6,8)][::-1])
 
@@ -42,3 +47,5 @@ class NetworkLookup:
             return "Failed to fetch MAC address"
         else:
             return f"Your MAC address is {formatted_mac}"
+
+#print(NetworkLookup().domain_lookup("hs.fi"))

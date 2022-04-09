@@ -4,7 +4,7 @@ from ui.ui import UI
 def main():
     window = Tk()
 
-    window.geometry("390x250")
+    window.geometry("345x235")
 
     window.title('Network Lookup App')
 

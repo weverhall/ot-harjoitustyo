@@ -28,7 +28,7 @@ Testit suoritetaan komennolla:
 poetry run invoke test
 ```
 
-Testikattavuusraportti tehdään komennolla:
+Testikattavuusraportti luodaan komennolla:
 
 ```bash
 poetry run invoke coverage-report

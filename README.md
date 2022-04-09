@@ -26,7 +26,7 @@ Tarkista myös, että Python-versiosi on 3.8 tai uudempi:
 python3 --version
 ```
 
-## Testaus
+## Testaus ja Pylint
 
 Suorita testit:
 
@@ -39,8 +39,6 @@ Luo testikattavuusraportti htmlcov-hakemistoon:
 ```bash
 poetry run invoke coverage-report
 ```
-
-## Pylint
 
 Tee [Pylint-tiedoston](./.pylintrc) määrittelemät kooditarkistukset:
 

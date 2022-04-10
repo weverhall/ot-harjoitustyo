@@ -3,8 +3,7 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
 
 - Domainin IP- ja saatavuushaku
 - Oman IP- ja MAC-osoitteen nouto
-
-WIP :)
+- ...WIP :)
 
 ## Dokumentaatio
 

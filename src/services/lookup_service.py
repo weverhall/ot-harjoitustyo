@@ -1,9 +1,9 @@
 import uuid
 import socket
 import sys
-import validators
 import whois
-from iplookup import iplookup
+import validators
+import dns.resolver
 
 
 class NetworkLookup:
@@ -16,7 +16,7 @@ class NetworkLookup:
         except:
             return "Domain is available!"
         try:
-            site_ip = str(iplookup.iplookup(url)[0])
+            site_ip = str(dns.resolver.resolve(url)[0])
             return f"Domain is already taken (host/proxy IP: {site_ip})"
         except:
             return "Domain is already taken"
@@ -30,14 +30,15 @@ class NetworkLookup:
             own_ip = "127.0.0.1"
         own_socket.close()
 
+        if own_ip == "127.0.0.1" or\
+        [validators.ipv6(own_ip), validators.ipv4(own_ip)].count(True) == 0:
+            return "Failed to fetch IP address"
         if own_ip[:8] == "192.168." or own_ip[:7] == "172.16."\
         or own_ip[:7] == "172.17." or own_ip[:7] == "172.18."\
         or own_ip[:7] == "172.19." or own_ip[:7] == "172.30."\
         or own_ip[:7] == "172.31." or own_ip[:5] == "172.2"\
         or own_ip[:3] == "10.":
             return f"IP: {own_ip} (private)"
-        if own_ip == "127.0.0.1":
-            return "Failed to fetch IP address"
         return f"IP: {own_ip} (public)"
 
     def find_own_mac(self):

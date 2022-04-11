@@ -8,8 +8,8 @@
 |  6.4  |  12  | projektin vaihto, uuden suunnittelua, ja yksinkertaisen sovelluslogiikan sekä käyttöliittymän luonti |
 |  7.4  |   8  | käyttöliittymään asianmukaiset luokat, sovelluslogiikan parantelua |
 |  8.4  |   4  | tiedostojen ja luokkien rungon selvittelyä |
-|  9.4  |   8  | uutta toiminnallisuutta, dokumentaation päivitys uuteen projuun, testien tekoa |
-|       |      |
+|  9.4  |   8  | uutta toiminnallisuutta, dokumentaation päivitys uuteen projuun, testien suunnittelua |
+| 11.4  |      | sovelluslogiikan hiontaa, testien tekoa ja pylint, pytest, gitignore, invoke yms. filujen päivitystä |
 |       |      |
 |       |      |
 |  yht. | =48  |

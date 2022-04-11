@@ -12,3 +12,4 @@
   - Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
   - Varatun verkkotunnuksen IP:n haku
 - Lisätty LookupView-luokka, joka vastaa UI-luokan kanssa em. perustoiminnallisuuden käyttöliittymäkomponenteista
+- Lisätty TestLookupService-luokka sovelluslogiikan testejä varten

@@ -1,8 +1,10 @@
 # NetLookApp
-Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja:
+Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
-- Domainin IP- ja saatavuushaku
+- Verkkotunnusten IP- ja saatavuushaku
 - Oman IP- ja MAC-osoitteen nouto
+  - IP:stä tarkastetaan, onko osoite yksityinen vai julkinen
+  - MAC:n osalta selvitetään, onko se UAA- vai LAA-tyyppinen (jos löytyy molemmat, näytetään yksilöivämpi UAA)
 - Muut mahdolliset toiminnallisuudet = WIP :)
 
 ## Dokumentaatio

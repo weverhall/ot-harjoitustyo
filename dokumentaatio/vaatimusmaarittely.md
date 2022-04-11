@@ -16,8 +16,8 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja.
 
 ### Perustoiminnallisuus
 
-- Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
-- Oman IP- ja MAC-osoitteen nouto
+- :heavy_check_mark: Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
+- :heavy_check_mark: Oman IP- ja MAC-osoitteen nouto
 
 ### Jatkokehitysideoita
 

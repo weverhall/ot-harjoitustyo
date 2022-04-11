@@ -19,8 +19,8 @@ class NetworkLookup:
             return f"Domain is already taken (host/proxy IP: {site_ip})"
 
     def find_own_ip(self):
-        own_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         try:
+            own_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             own_socket.connect(("10.255.255.255", 1))
             own_ip = own_socket.getsockname()[0]
         except:
@@ -44,4 +44,11 @@ class NetworkLookup:
 
         if validators.mac_address(formatted_mac) is not True:
             return "Failed to fetch MAC address"
-        return f"MAC: {formatted_mac}"
+
+        second_least_significant_bit = str(bin(int(formatted_mac[:2], 16)))[2:].zfill(8)[-2]
+
+        if second_least_significant_bit == "0":
+            mac_type = "UAA"
+        elif second_least_significant_bit == "1":
+            mac_type = "LAA"
+        return f"MAC: {formatted_mac} ({mac_type})"

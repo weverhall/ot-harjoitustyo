@@ -28,7 +28,7 @@ class LookupView:
 
         if output_value == "Domain is available!":
             self._label_domain_button.configure(foreground="green")
-        elif output_value[0:23] == "Domain is already taken":
+        elif output_value[:23] == "Domain is already taken":
             self._label_domain_button.configure(foreground="red")
         else:
             self._label_domain_button.configure(foreground="")

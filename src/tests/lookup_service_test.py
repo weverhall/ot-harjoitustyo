@@ -14,7 +14,7 @@ class TestLookupService(unittest.TestCase):
         "Invalid domain name, try again")
 
     def test_finds_taken_domain(self):
-        self.assertEqual(self.lookup.domain_lookup("amazon.com")[0:23], 
+        self.assertEqual(self.lookup.domain_lookup("amazon.com")[:23], 
         "Domain is already taken")
 
     def test_finds_taken_domain_correct_ip(self):

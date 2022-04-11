@@ -1,7 +1,6 @@
 import uuid
 import socket
 import sys
-import whois
 import validators
 import dns.resolver
 
@@ -11,15 +10,13 @@ class NetworkLookup:
         if validators.domain(url) is not True:
             return "Invalid domain name, try again"
         try:
-            if whois.whois(url).domain_name is None:
+            if dns.resolver.resolve(url) is None:
                 sys.exit()
         except:
             return "Domain is available!"
-        try:
-            site_ip = str(dns.resolver.resolve(url)[0])
+        else:
+            site_ip = dns.resolver.resolve(url)[0]
             return f"Domain is already taken (host/proxy IP: {site_ip})"
-        except:
-            return "Domain is already taken"
 
     def find_own_ip(self):
         own_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

@@ -6,7 +6,7 @@ def main():
 
     window.geometry("450x200")
 
-    window.title('NetLookApp: Network Lookup')
+    window.title('NetLookApp')
 
     UI(window).start()
 

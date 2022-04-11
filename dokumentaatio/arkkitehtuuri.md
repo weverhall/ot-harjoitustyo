@@ -1,0 +1,1 @@
+![Pakkauskaavio](https://github.com/weverhall/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/pakkauskaavio_wk4.png "Pakkauskaavio (viikko 4)")

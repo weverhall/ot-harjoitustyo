@@ -1,4 +1,4 @@
-from tkinter import Tk, ttk, constants
+from tkinter import ttk
 from services.lookup_service import NetworkLookup
 
 

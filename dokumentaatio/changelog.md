@@ -8,8 +8,10 @@
 
 - Uuden loisteliaan projektin sarastus, eli tietoverkkosovelluksen alku
 - Lisätty NetworkLookup-luokka, joka vastaa sovelluslogiikan koodista
-  - Omien IP- ja MAC-osoitteiden nouto, IP määritelty joko yksityiseksi tai julkiseksi noudetun osoitteen perusteella
   - Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
-  - Varatun verkkotunnuksen IP:n haku
+    - Varatun verkkotunnuksen IP:n haku
+  - Omien IP- ja MAC-osoitteiden nouto
+    - IP määritelty joko yksityiseksi tai julkiseksi noudetun osoitteen perusteella
+    - MAC määritelty joko LAA- tai UAA- tyyppiseksi
 - Lisätty LookupView-luokka, joka vastaa UI-luokan kanssa em. perustoiminnallisuuden käyttöliittymäkomponenteista
 - Lisätty TestLookupService-luokka sovelluslogiikan testejä varten

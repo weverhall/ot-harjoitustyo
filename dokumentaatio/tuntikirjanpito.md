@@ -10,6 +10,6 @@
 |  8.4  |   4  | tiedostojen ja luokkien rungon selvittelyä |
 |  9.4  |   8  | uutta toiminnallisuutta, dokumentaation päivitys uuteen projuun, testien suunnittelua |
 | 11.4  |   5  | sovelluslogiikan hiontaa, testien tekoa ja pylint, pytest, gitignore, invoke yms. filujen päivitystä |
+| 12.4  |   2  | varmistettu sovelluksen toimivuus virtuaalityöasemalla, uploadattu pakkauskaavio ja päivitetty dokumentaatiota
 |       |      |
-|       |      |
-|  yht. | =53  |
+|  yht. | =55  |

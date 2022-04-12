@@ -4,8 +4,7 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - Verkkotunnusten IP- ja saatavuushaku
 - Oman IP- ja MAC-osoitteen nouto
   - IP:stä tarkastetaan, onko osoite yksityinen vai julkinen
-  - MAC:n osalta selvitetään, onko se UAA- vai LAA-tyyppinen (jos löytyy molemmat, näytetään yksilöivämpi UAA)
-- Muut mahdolliset toiminnallisuudet = WIP :)
+  - MAC:n osalta selvitetään, onko se UAA- vai LAA-tyyppinen (molempien löytyessä näytetään yksilöivämpi UAA)
 
 ## Dokumentaatio
 

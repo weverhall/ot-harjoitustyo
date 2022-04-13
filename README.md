@@ -5,7 +5,7 @@ Sovellus tarjoaa tietoverkon osoitehakupalveluja:
 - Oman yksityisen ja julkisen IP-osoitteen nouto
   - IPv4- ja IPv6-osoitetyypin tarkastus
 - Oman MAC-osoitteen nouto
-  - UAA- ja LAA-osoitetyypin tarkastus (molempien löytyessä näytetään yksilöivämpi UAA)
+  - UAA- ja LAA-osoitetyypin tarkastus
 
 ## Dokumentaatio
 

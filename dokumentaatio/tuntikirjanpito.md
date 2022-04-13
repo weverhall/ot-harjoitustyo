@@ -11,7 +11,7 @@
 |  9.4  |   8  | uutta toiminnallisuutta, dokumentaation päivitys uuteen projuun, testien suunnittelua |
 | 11.4  |   5  | sovelluslogiikan hiontaa, testien tekoa ja pylint, pytest, gitignore, invoke yms. filujen päivitystä |
 | 12.4  |   2  | varmistettu sovelluksen toimivuus virtuaalityöasemalla, uploadattu pakkauskaavio ja päivitetty dokumentaatiota
-| 13.4  |   4  | uutta toiminnallisuutta sovelluslogiikkaan
+| 13.4  |   4  | uutta toiminnallisuutta, päivitetty dokumentaatiota
 |       |      |
 |       |      |
 |  yht. | =59  |

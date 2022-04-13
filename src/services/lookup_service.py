@@ -1,52 +1,60 @@
-import uuid
-import socket
 import sys
+import socket
+from uuid import getnode
+from urllib.request import urlopen
+from dns.resolver import resolve
 import validators
-import dns.resolver
 
 
 class NetworkLookup:
     def domain_lookup(self, url):
         if validators.domain(url) is not True:
-            return "Invalid domain name, try again"
+            return "Invalid domain name"
         try:
-            if dns.resolver.resolve(url) is None:
+            if resolve(url) is None:
                 sys.exit()
         except:
             return "Domain is available!"
         else:
-            site_ip = dns.resolver.resolve(url)[0]
+            site_ip = resolve(url)[0]
             return f"Domain is already taken (host/proxy IP: {site_ip})"
 
-    def find_own_ip(self):
+    def find_own_public_ip(self):
+        try:
+            with urlopen("https://checkip.amazonaws.com/") as response:
+                public_ip = str(response.read())[2:-3]
+                response.close()
+        except:
+            public_ip = "127.0.0.1"
+
+        if public_ip == "127.0.0.1" or\
+            [validators.ipv6(public_ip), validators.ipv4(public_ip)].count(True) == 0:
+            return "Failed to fetch public IP address, please try again"
+        if validators.ipv4(public_ip) is True:
+            return f"Public IP: {public_ip} (IPv4)"
+        return f"Public IP: {public_ip} (IPv6)"
+
+    def find_local_ip(self):
         try:
             own_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             own_socket.connect(("10.255.255.255", 1))
-            own_ip = own_socket.getsockname()[0]
+            local_ip = own_socket.getsockname()[0]
         except:
-            own_ip = "127.0.0.1"
+            local_ip = "127.0.0.1"
         own_socket.close()
 
-        if own_ip == "127.0.0.1" or\
-        [validators.ipv6(own_ip), validators.ipv4(own_ip)].count(True) == 0:
-            return "Failed to fetch IP address"
-        if own_ip[:8] == "192.168." or own_ip[:7] == "172.16."\
-        or own_ip[:7] == "172.17." or own_ip[:7] == "172.18."\
-        or own_ip[:7] == "172.19." or own_ip[:7] == "172.30."\
-        or own_ip[:7] == "172.31." or own_ip[:5] == "172.2"\
-        or own_ip[:3] == "10.":
-            return f"IP: {own_ip} (private)"
-        return f"IP: {own_ip} (public)"
+        if local_ip == "127.0.0.1" or validators.ipv4(local_ip) is not True:
+            return "Failed to fetch local IP address, please try again"
+        return f"Local IP: {local_ip} (IPv4)"
 
     def find_own_mac(self):
-        formatted_mac = ":".join(['{:02x}'.format((uuid.getnode() >> i) & 0xff)
+        formatted_mac = ":".join(['{:02x}'.format((getnode() >> i) & 0xff)
         for i in range(0,8*6,8)][::-1])
 
         if validators.mac_address(formatted_mac) is not True:
-            return "Failed to fetch MAC address"
+            return "Failed to fetch MAC address, please try again"
 
         second_least_significant_bit = str(bin(int(formatted_mac[:2], 16)))[2:].zfill(8)[-2]
-
         if second_least_significant_bit == "0":
             mac_type = "UAA"
         elif second_least_significant_bit == "1":

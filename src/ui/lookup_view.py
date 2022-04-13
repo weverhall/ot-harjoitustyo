@@ -9,7 +9,8 @@ class LookupView:
         self._initialize()
         self._handle_lookup_view = handle_lookup_view
         self._label_domain_button = ttk.Label(master=self._root)
-        self._label_ip_button = ttk.Label(master=self._root)
+        self._label_local_ip_button = ttk.Label(master=self._root)
+        self._label_own_public_ip_button = ttk.Label(master=self._root)
         self._label_mac_button = ttk.Label(master=self._root)
 
     def grid(self):
@@ -34,17 +35,23 @@ class LookupView:
             self._label_domain_button.configure(foreground="")
 
     def _handle_ip_mac_button_click(self):
-        output_ip = NetworkLookup.find_own_ip(self)
-        self._label_ip_button.config(text=output_ip,
+        output_own_public_ip = NetworkLookup.find_own_public_ip(self)
+        self._label_own_public_ip_button.config(text=output_own_public_ip,
         foreground="blue")
-        self._label_ip_button.grid(
+        self._label_own_public_ip_button.grid(
             sticky="W", row=8, column=0, columnspan=2, padx=2, pady=2)
+
+        output_local_ip = NetworkLookup.find_local_ip(self)
+        self._label_local_ip_button.config(text=output_local_ip,
+        foreground="blue")
+        self._label_local_ip_button.grid(
+            sticky="W", row=9, column=0, columnspan=2, padx=2, pady=2)
 
         output_mac = NetworkLookup.find_own_mac(self)
         self._label_mac_button.config(text=output_mac,
         foreground="blue")
         self._label_mac_button.grid(
-            sticky="W", row=9, column=0, columnspan=2, padx=2, pady=2)
+            sticky="W", row=10, column=0, columnspan=2, padx=2, pady=2)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -64,6 +71,3 @@ class LookupView:
         self.domain_name_entry.grid(sticky="NW", row=0, column=0, columnspan=2, padx=2, pady=2)    
         domain_check_button.grid(sticky="NW", row=1, column=0, columnspan=2, padx=2, pady=2) 
         ip_mac_fetch_button.grid(sticky="W", row=7, column=0, columnspan=2, padx=2, pady=2)
-        
-
-        

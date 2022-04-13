@@ -25,7 +25,12 @@ class NetworkLookup:
                 public_ip = str(response.read())[2:-3]
                 response.close()
         except:
-            public_ip = "127.0.0.1"
+            try:
+                with urlopen("https://ipv4.icanhazip.com/") as response:
+                    public_ip = str(response.read())[2:-3]
+                    response.close()
+            except:
+                public_ip = "127.0.0.1"
 
         if public_ip == "127.0.0.1" or\
             [validators.ipv6(public_ip), validators.ipv4(public_ip)].count(True) == 0:

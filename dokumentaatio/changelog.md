@@ -15,3 +15,8 @@
     - MAC määritelty joko LAA- tai UAA-tyyppiseksi
 - Lisätty LookupView-luokka, joka vastaa UI-luokan kanssa em. perustoiminnallisuuden käyttöliittymäkomponenteista
 - Lisätty TestLookupService-luokka sovelluslogiikan testejä varten
+
+## Viikko 5
+
+- Oikeasti hakee ja näyttää myös julkisen IP-osoitteen
+- IP:t määritelty joko IPv4- tai IPv6-tyyppisiksi

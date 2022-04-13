@@ -4,9 +4,9 @@ from ui.ui import UI
 def main():
     window = Tk()
 
-    window.geometry("450x200")
+    window.geometry("450x225")
 
-    window.title('NetLookApp')
+    window.title("NetLookApp")
 
     UI(window).start()
 

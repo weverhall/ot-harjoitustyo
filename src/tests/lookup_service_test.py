@@ -11,7 +11,7 @@ class TestLookupService(unittest.TestCase):
 
     def test_finds_invalid_domain(self):
         self.assertEqual(self.lookup.domain_lookup("invalid#domain%,,com"), 
-        "Invalid domain name, try again")
+        "Invalid domain name")
 
     def test_finds_taken_domain(self):
         self.assertEqual(self.lookup.domain_lookup("amazon.com")[:23], 

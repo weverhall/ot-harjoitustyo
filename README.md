@@ -1,10 +1,11 @@
 # NetLookApp
-Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
+Sovellus tarjoaa tietoverkon osoitehakupalveluja:
 
-- Verkkotunnusten IP- ja saatavuushaku
-- Oman IP- ja MAC-osoitteen nouto
-  - IP:stä tarkastetaan, onko osoite yksityinen vai julkinen
-  - MAC:n osalta selvitetään, onko se UAA- vai LAA-tyyppinen (molempien löytyessä näytetään yksilöivämpi UAA)
+- Verkkotunnusten saatavuus- ja IP-haku
+- Oman yksityisen ja julkisen IP-osoitteen nouto
+  - IPv4- ja IPv6-osoitetyypin tarkastus
+- Oman MAC-osoitteen nouto
+  - UAA- ja LAA-osoitetyypin tarkastus (molempien löytyessä näytetään yksilöivämpi UAA)
 
 ## Dokumentaatio
 

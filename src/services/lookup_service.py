@@ -2,8 +2,7 @@ import socket
 from uuid import getnode
 from urllib.request import urlopen
 from urllib.error import URLError
-from dns.resolver import resolve
-from dns.resolver import NXDOMAIN
+from dns.resolver import resolve, NXDOMAIN
 import validators
 
 
@@ -12,12 +11,9 @@ class NetworkLookup:
         if validators.domain(url) is not True:
             return "Invalid domain name"
         try:
-            resolve(url)
+            return f"Domain is already taken (host/proxy IP: {resolve(url)[0]})"
         except NXDOMAIN:
             return "Domain is available!"
-        else:
-            site_ip = resolve(url)[0]
-            return f"Domain is already taken (host/proxy IP: {site_ip})"
 
     def find_own_public_ip(self):
         try:

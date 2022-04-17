@@ -19,12 +19,10 @@ class NetworkLookup:
         try:
             with urlopen("https://checkip.amazonaws.com/") as response:
                 public_ip = str(response.read())[2:-3]
-                response.close()
         except URLError:
             try:
                 with urlopen("https://ipv4.icanhazip.com/") as response:
                     public_ip = str(response.read())[2:-3]
-                    response.close()
             except URLError:
                 public_ip = "127.0.0.1"
 
@@ -48,7 +46,7 @@ class NetworkLookup:
             return "Failed to fetch local IP address, please try again"
         return f"Local IP: {local_ip} (IPv4)"
 
-    def find_own_mac(self):
+    def find_mac(self):
         formatted_mac = "".join(c + ":" if i % 2 else c for i,
         c in enumerate(hex(getnode())[2:].zfill(12)))[:-1]
 

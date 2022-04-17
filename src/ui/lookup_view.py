@@ -9,8 +9,8 @@ class LookupView:
         self._initialize()
         self._handle_lookup_view = handle_lookup_view
         self._label_domain_button = ttk.Label(master=self._root)
-        self._label_local_ip_button = ttk.Label(master=self._root)
         self._label_own_public_ip_button = ttk.Label(master=self._root)
+        self._label_local_ip_button = ttk.Label(master=self._root)
         self._label_mac_button = ttk.Label(master=self._root)
 
     def grid(self):
@@ -47,7 +47,7 @@ class LookupView:
         self._label_local_ip_button.grid(
             sticky="W", row=9, column=0, columnspan=2, padx=2, pady=2)
 
-        output_mac = NetworkLookup.find_own_mac(self)
+        output_mac = NetworkLookup.find_mac(self)
         self._label_mac_button.config(text=output_mac,
         foreground="blue")
         self._label_mac_button.grid(

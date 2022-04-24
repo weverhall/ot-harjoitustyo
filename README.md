@@ -1,8 +1,8 @@
 # NetLookApp
 Sovellus tarjoaa tietoverkon osoitehakupalveluja:
 
-- Verkkotunnusten saatavuushaku
-  - Varatun verkkotunnuksen IP-osoitteen nouto
+- Verkkotunnusten saatavuushaku IP-osoitteen tai isäntänimen perusteella
+  - Varatun verkkotunnuksen isäntänimen tai IP:n nouto
 - Oman yksityisen ja julkisen IP:n nouto
   - IPv4- ja IPv6-osoitetyypin tarkastus
 - Oman MAC-osoitteen nouto

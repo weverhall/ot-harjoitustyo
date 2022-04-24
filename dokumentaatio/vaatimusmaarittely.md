@@ -6,21 +6,23 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja.
 
 ## Sovelluksen toiminnallisuus
 
-### Käyttäjät
+### Käyttäjät ja käyttöliittymä
 
-- Uniikin käyttäjätunnuksen luonti käyttäjänimellä ja salasanalla
-  - Kaikilla yksi, samantasoinen käyttäjärooli tai tämän lisäksi toinenkin, laajemmilla oikeuksilla toimiva pääkäyttäjä
-- Sisäänkirjautuminen luodulla käyttäjätunnuksella
-  - Sopivat raamit ja virheilmoitukset tunnuksiin liittyen
-- Uloskirjautuminen
+Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. Käyttäjän perusnäkymässä on suoraan saatavilla kaikki toiminnallisuus. Mahdollisia tallennettuja tietoja kunkin toiminnallisuuden osalta on joko kokonaan uusissa näkymissä tai perusnäkymän lisäosioissa.
 
 ### Perustoiminnallisuus
 
 - :heavy_check_mark: Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
-- :heavy_check_mark: Oman IP- ja MAC-osoitteen nouto
+  - :heavy_check_mark: Varatun verkkotunnuksen IP:n nouto
+- :heavy_check_mark: Käyttäjän IP- ja MAC-osoitteen nouto
+  - :heavy_check_mark: Osoitetyyppien tarkastus
 
 ### Jatkokehitysideoita
 
-- Lisätietoa tai toiminnallisuutta liittyen em. perustoiminnallisuuteen
+- :heavy_check_mark: Verkkotunnusten saatavuuden haku myös IP:n perustella
+  - :heavy_check_mark: Varatun verkkotunnuksen isäntänimen nouto
 - Verkkotunnusten saatavuustietojen tallennus tietokantaan
-- Muuta tietoverkkoihin liittyvää toiminnallisuutta 
+- Verkkotunnusten pingaustoiminto
+- Latenssitietojen tallennus tietokantaan
+- Käyttäjän omien osoitteiden tallennus myöhemmäksi
+- Muuta tietoverkkoihin liittyvää toiminnallisuutta

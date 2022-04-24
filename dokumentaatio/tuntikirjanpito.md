@@ -13,5 +13,7 @@
 | 12.4  |   2  | varmistettu sovelluksen toimivuus virtuaalityöasemalla, uploadattu pakkauskaavio ja päivitetty dokumentaatiota
 | 13.4  |   4  | uutta toiminnallisuutta, päivitetty dokumentaatiota
 | 15.4  |   1  | pylint-korjauksia
+| 23.4  |   6  | täysin uutta toiminnallisuutta ja vanhan parantelua
+| 24.4  |      | 
 |       |      |
-|  yht. | =60  |
+|  yht. | =66  |

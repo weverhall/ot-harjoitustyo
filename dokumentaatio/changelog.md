@@ -18,5 +18,8 @@
 
 ## Viikko 5
 
-- Oikeasti hakee ja näyttää myös julkisen IP-osoitteen
-- IP:t määritelty joko IPv4- tai IPv6-tyyppisiksi
+- Oikeasti hakee myös julkisen IP-osoitteen
+  - Oletusarvoisesti näyttää sekä yksityisen/paikallisen että julkisen IP:n erikseen
+  - IP:t määritelty joko IPv4- tai IPv6-tyyppisiksi
+- Verkkotunnusten saatavuuden haku nyt myös IP:n perustella
+  - Varatun IP:n tapauksessa noutaa palvelimen nimen

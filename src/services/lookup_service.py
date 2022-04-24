@@ -1,17 +1,22 @@
 import socket
+import subprocess
+from platform import system as platform_os
 from uuid import getnode
 from urllib.request import urlopen
 from urllib.error import URLError
-from dns.resolver import resolve, NXDOMAIN
+from dns.resolver import resolve, resolve_address, NXDOMAIN, NoNameservers
 import validators
 
 
 class NetworkLookup:
-    def domain_lookup(self, url):
-        if validators.domain(url) is not True:
-            return "Invalid domain name"
+    def domain_lookup(self, host):
+        if [validators.domain(host) or validators.ipv4(host)].count(True) == 0:
+            return "Invalid IP or domain name"
         try:
-            return f"Domain is already taken (host/proxy IP: {resolve(url)[0]})"
+            if validators.domain(host):
+                return f"Domain is already taken (host/proxy IP: {resolve(host)[0]})"
+            return f"Domain is already taken "\
+                   f"(host/proxy name: {str(resolve_address(host)[0])[:-1]})"
         except NXDOMAIN:
             return "Domain is available!"
 
@@ -38,9 +43,9 @@ class NetworkLookup:
             own_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             own_socket.connect(("10.255.255.255", 1))
             local_ip = own_socket.getsockname()[0]
+            own_socket.close()
         except OSError:
             local_ip = "127.0.0.1"
-        own_socket.close()
 
         if local_ip == "127.0.0.1" or validators.ipv4(local_ip) is not True:
             return "Failed to fetch local IP address, please try again"
@@ -59,3 +64,27 @@ class NetworkLookup:
         elif second_least_significant_bit == "1":
             mac_type = "LAA"
         return f"MAC: {formatted_mac} ({mac_type})"
+
+    def domain_ping(self, host):
+        if [validators.domain(host) or validators.ipv4(host)].count(True) == 0:
+            return "Invalid IP or domain name"
+        try:
+            if validators.domain(host):
+                resolve(host)
+            elif validators.ipv4(host):
+                resolve_address(host)
+        except (NXDOMAIN, NoNameservers):
+            return "Domain is available or nameservers failed to answer query"
+
+        try:
+            os_arg = "-n" if platform_os().lower() == "windows" else "-c"
+            popen_args = ["ping", os_arg, "5", host]
+            pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
+            output = str(pinging.communicate(timeout = 10)[0]).split("nrtt ", 1)[1][:-3]
+            pinging.terminate()
+            return f'Latency Min/Avg/Max/SD (5 pings): {output.split(" = ", 1)[1]}'
+        except subprocess.TimeoutExpired:
+            pinging.terminate()
+            return "Pinging process timed out (severe latency or packet loss)"
+
+print(NetworkLookup().domain_ping("96.118.139.252"))

@@ -8,7 +8,7 @@ Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja.
 
 ### Käyttäjät ja käyttöliittymä
 
-Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. Käyttäjän perusnäkymässä on suoraan saatavilla kaikki toiminnallisuus. Mahdollisia tallennettuja tietoja kunkin toiminnallisuuden osalta on joko kokonaan uusissa näkymissä tai perusnäkymän lisäosioissa.
+Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. Käyttäjän perusnäkymässä on suoraan saatavilla kaikki toiminnallisuus. Mahdollisia tallennettuja tietoja kunkin toiminnallisuuden osalta on saatavilla erillisestä tietokantanäkymästä. 
 
 ### Perustoiminnallisuus
 
@@ -20,7 +20,7 @@ Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. K�
 ### Jatkokehitysideoita
 
 - :heavy_check_mark: Verkkotunnusten saatavuuden haku myös IP:n perustella
-  - :heavy_check_mark: Varatun verkkotunnuksen isäntänimen nouto
+  - :heavy_check_mark: Varatun verkkotunnuksen FQDN:n nouto
 - Verkkotunnusten saatavuustietojen tallennus tietokantaan
 - :heavy_check_mark: Verkkotunnusten pingaustoiminto
 - Latenssitietojen tallennus tietokantaan

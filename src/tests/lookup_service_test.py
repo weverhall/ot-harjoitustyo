@@ -13,7 +13,7 @@ class TestLookupService(unittest.TestCase):
 
     def test_finds_available_ip(self):
         self.assertEqual(self.lookup.domain_lookup("96.118.139.252"), 
-        "Domain is available!")
+        "IP resolve failure (domain likely available)")
 
     def test_finds_invalid_domain(self):
         self.assertEqual(self.lookup.domain_lookup("invalid#domain%,,com"), 
@@ -24,20 +24,20 @@ class TestLookupService(unittest.TestCase):
         "Invalid domain name or IP")
 
     def test_finds_taken_domain(self):
-        self.assertEqual(self.lookup.domain_lookup("amazon.com")[:23], 
-        "Domain is already taken")
+        self.assertEqual(self.lookup.domain_lookup("amazon.com")[:15], 
+        "Domain is taken")
 
     def test_finds_taken_ip(self):
-        self.assertEqual(self.lookup.domain_lookup("128.214.222.24")[:23], 
-        "Domain is already taken")
+        self.assertEqual(self.lookup.domain_lookup("128.214.222.24")[:15], 
+        "Domain is taken")
 
     def test_finds_taken_domain_correct_ip(self):
-        self.assertEqual(self.lookup.domain_lookup("melkki.cs.helsinki.fi")[:42], 
-        "Domain is already taken (IP: 128.214.9.98)")
+        self.assertEqual(self.lookup.domain_lookup("melkki.cs.helsinki.fi")[:36], 
+        "Domain is taken (IPv4: 128.214.9.98)")
 
     def test_finds_taken_domain_correct_fqdn(self):
-        self.assertEqual(self.lookup.domain_lookup("128.214.9.98")[:53], 
-        "Domain is already taken (FQDN: melkki.cs.helsinki.fi)")
+        self.assertEqual(self.lookup.domain_lookup("128.214.9.98")[:45], 
+        "Domain is taken (FQDN: melkki.cs.helsinki.fi)")
 
     def test_own_public_ip_is_valid(self):
         self.assertTrue([validators.ipv6(self.lookup.find_own_public_ip()[11:-8]) or \
@@ -49,11 +49,3 @@ class TestLookupService(unittest.TestCase):
 
     def test_mac_is_valid(self):
         self.assertTrue(validators.mac_address(self.lookup.find_mac()[5:-6]))
-
-    def test_taken_domain_timeout(self):
-        self.assertEqual(self.lookup.domain_lookup("game8.jp")[45:],
-        "Pinging process timed out (severe latency or packet loss)")
-
-    def test_taken_ip_timeout(self):
-        self.assertEqual(self.lookup.domain_lookup("18.176.245.225")[88:],
-        "Pinging process timed out (severe latency or packet loss)")

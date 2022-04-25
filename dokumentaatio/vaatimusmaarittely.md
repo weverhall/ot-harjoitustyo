@@ -12,7 +12,7 @@ Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. K�
 
 ### Perustoiminnallisuus
 
-- :heavy_check_mark: Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
+- :heavy_check_mark: Verkkotunnusten saatavuuden haku domainnimen perusteella
   - :heavy_check_mark: Varatun verkkotunnuksen IP:n nouto
 - :heavy_check_mark: Käyttäjän IP- ja MAC-osoitteen nouto
   - :heavy_check_mark: Osoitetyyppien tarkastus
@@ -22,7 +22,7 @@ Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. K�
 - :heavy_check_mark: Verkkotunnusten saatavuuden haku myös IP:n perustella
   - :heavy_check_mark: Varatun verkkotunnuksen isäntänimen nouto
 - Verkkotunnusten saatavuustietojen tallennus tietokantaan
-- Verkkotunnusten pingaustoiminto
+- :heavy_check_mark: Verkkotunnusten pingaustoiminto
 - Latenssitietojen tallennus tietokantaan
 - Käyttäjän omien osoitteiden tallennus myöhemmäksi
 - Muuta tietoverkkoihin liittyvää toiminnallisuutta

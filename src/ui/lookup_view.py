@@ -27,9 +27,10 @@ class LookupView:
         self._label_domain_button.grid(
             sticky="NW", row=4, column=0, columnspan=2, padx=2, pady=2)
 
-        if output_value == "Domain is available!":
+        if output_value == "Domain is available!" or \
+           output_value == "IP resolve failure (domain likely available)":
             self._label_domain_button.configure(foreground="green")
-        elif output_value[:23] == "Domain is already taken":
+        elif output_value[:15] == "Domain is taken":
             self._label_domain_button.configure(foreground="blue")
         else:
             self._label_domain_button.configure(foreground="red")
@@ -64,7 +65,7 @@ class LookupView:
 
         ip_mac_fetch_button = ttk.Button(
             master=self._root, 
-            text="Fetch my IP & MAC addresses",
+            text="Fetch own IP & MAC addresses",
             command=self._handle_ip_mac_button_click)
                
         self._frame.grid_columnconfigure(1, weight=1, minsize=400)  

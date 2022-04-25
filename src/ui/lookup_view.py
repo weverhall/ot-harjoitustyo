@@ -59,7 +59,7 @@ class LookupView:
 
         domain_check_button = ttk.Button(
             master=self._root, 
-            text="Enter hostname or IP (e.g. helsinki.fi or 128.214.222.24)",
+            text="Enter domain name or IP (e.g. mooc.fi or 128.214.9.98)",
             command=self._handle_domain_button_click)
 
         ip_mac_fetch_button = ttk.Button(

@@ -4,50 +4,50 @@ from platform import system as platform_os
 from uuid import getnode
 from urllib.request import urlopen
 from urllib.error import URLError
-from dns.resolver import resolve, resolve_address, NXDOMAIN, NoNameservers
+from dns.resolver import resolve, resolve_address, NXDOMAIN, NoNameservers, NoAnswer
 import validators
 
 
 class NetworkLookup:
     def domain_lookup(self, host):
         if [validators.domain(host) or validators.ipv4(host)].count(True) == 0:
-            return "Invalid hostname or IP"
-
-        def domain_ping(host):
-            try:
-                if platform_os().lower() == "windows":
-                    popen_args = ["ping", "-n", "1", host]
-                    pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-                    output = str(pinging.communicate(timeout = 1)[0])
-                    pinging.terminate()
-                    if "100%" in output:
-                        return "Pinging process timed out (severe latency or packet loss)"
-                    parsed_output = output.split("Minimum = ", 1)[1]
-                    return f'Latency: {parsed_output.split("ms", 1)[0]} ms'
-
-                popen_args = ["ping", "-c", "1", host]
-                pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-                output = str(pinging.communicate(timeout = 1)[0])
-                pinging.terminate()
-                parsed_output = output.split("mdev = ", 1)[1]
-                return f'Latency: {parsed_output.split("/", 3)[1]} ms'
-            
-            except subprocess.TimeoutExpired:
-                pinging.terminate()
-                return "Pinging process timed out (severe latency or packet loss)"
+            return "Invalid domain name or IP"
 
         try:
             if validators.domain(host):
-                return f"Domain is already taken"\
-                       f"\nIP: {resolve(host)[0]} (IPv4)"\
-                       f"\n{domain_ping(host)}"
+                return f"Domain is already taken (IP: {resolve(host)[0]})"\
+                       f"\n{NetworkLookup.domain_ping(host)}"
 
-            return f"Domain is already taken "\
-                   f"\nFQDN: {str(resolve_address(host)[0])[:-1]}"\
-                   f"\n{domain_ping(host)}"
+            return f"Domain is already taken (FQDN: {str(resolve_address(host)[0])[:-1]})"\
+                   f"\n{NetworkLookup.domain_ping(host)}"
 
-        except (NXDOMAIN, NoNameservers):
+        except NXDOMAIN:
             return "Domain is available!"
+        except (NoNameservers, NoAnswer):
+            return "DNS response failure"
+
+    def domain_ping(host):
+        try:
+            if platform_os().lower() == "windows":
+                popen_args = ["ping", "-n", "1", host]
+                pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
+                output = str(pinging.communicate(timeout = 1)[0])
+                pinging.terminate()
+                if "100%" in output:
+                    return "Pinging process timed out (severe latency or packet loss)"
+                parsed_output = output.split("Minimum = ", 1)[1]
+                return f'Latency: {parsed_output.split("ms", 1)[0]} ms'
+
+            popen_args = ["ping", "-c", "1", host]
+            pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
+            output = str(pinging.communicate(timeout = 1)[0])
+            pinging.terminate()
+            parsed_output = output.split("mdev = ", 1)[1]
+            return f'Latency: {parsed_output.split("/", 3)[1]} ms'
+
+        except subprocess.TimeoutExpired:
+            pinging.terminate()
+            return "Pinging process timed out (severe latency or packet loss)"
 
     def find_own_public_ip(self):
         try:
@@ -93,5 +93,3 @@ class NetworkLookup:
         elif second_least_significant_bit == "1":
             mac_type = "LAA"
         return f"MAC: {formatted_mac} ({mac_type})"
-
-#print(NetworkLookup().domain_lookup("mooc.fi"))

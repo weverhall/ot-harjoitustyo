@@ -15,7 +15,7 @@ class NetworkLookup:
 
         try:
             if validators.domain(host):
-                return f"Domain is already taken (IP: {resolve(host)[0]})"\
+                return f"Domain is already taken (IPv4: {resolve(host)[0]})"\
                        f"\n{NetworkLookup.domain_ping(host)}"
 
             return f"Domain is already taken (FQDN: {str(resolve_address(host)[0])[:-1]})"\

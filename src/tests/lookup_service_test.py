@@ -50,3 +50,10 @@ class TestLookupService(unittest.TestCase):
     def test_mac_is_valid(self):
         self.assertTrue(validators.mac_address(self.lookup.find_mac()[5:-6]))
 
+    def test_taken_domain_timeout(self):
+        self.assertEqual(self.lookup.domain_lookup("game8.jp")[45:],
+        "Pinging process timed out (severe latency or packet loss)")
+
+    def test_taken_ip_timeout(self):
+        self.assertEqual(self.lookup.domain_lookup("18.176.245.225")[88:],
+        "Pinging process timed out (severe latency or packet loss)")

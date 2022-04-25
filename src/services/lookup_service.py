@@ -11,13 +11,42 @@ import validators
 class NetworkLookup:
     def domain_lookup(self, host):
         if [validators.domain(host) or validators.ipv4(host)].count(True) == 0:
-            return "Invalid IP or domain name"
+            return "Invalid hostname or IP"
+
+        def domain_ping(host):
+            try:
+                if platform_os().lower() == "windows":
+                    popen_args = ["ping", "-n", "1", host]
+                    pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
+                    output = str(pinging.communicate(timeout = 1)[0])
+                    pinging.terminate()
+                    if "100%" in output:
+                        return "Pinging process timed out (severe latency or packet loss)"
+                    parsed_output = output.split("Minimum = ", 1)[1]
+                    return f'Latency: {parsed_output.split("ms", 1)[0]} ms'
+
+                popen_args = ["ping", "-c", "1", host]
+                pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
+                output = str(pinging.communicate(timeout = 1)[0])
+                pinging.terminate()
+                parsed_output = output.split("mdev = ", 1)[1]
+                return f'Latency: {parsed_output.split("/", 3)[1]} ms'
+            
+            except subprocess.TimeoutExpired:
+                pinging.terminate()
+                return "Pinging process timed out (severe latency or packet loss)"
+
         try:
             if validators.domain(host):
-                return f"Domain is already taken (host/proxy IP: {resolve(host)[0]})"
+                return f"Domain is already taken"\
+                       f"\nIP: {resolve(host)[0]} (IPv4)"\
+                       f"\n{domain_ping(host)}"
+
             return f"Domain is already taken "\
-                   f"(host/proxy name: {str(resolve_address(host)[0])[:-1]})"
-        except NXDOMAIN:
+                   f"\nFQDN: {str(resolve_address(host)[0])[:-1]}"\
+                   f"\n{domain_ping(host)}"
+
+        except (NXDOMAIN, NoNameservers):
             return "Domain is available!"
 
     def find_own_public_ip(self):
@@ -65,26 +94,4 @@ class NetworkLookup:
             mac_type = "LAA"
         return f"MAC: {formatted_mac} ({mac_type})"
 
-    def domain_ping(self, host):
-        if [validators.domain(host) or validators.ipv4(host)].count(True) == 0:
-            return "Invalid IP or domain name"
-        try:
-            if validators.domain(host):
-                resolve(host)
-            elif validators.ipv4(host):
-                resolve_address(host)
-        except (NXDOMAIN, NoNameservers):
-            return "Domain is available or nameservers failed to answer query"
-
-        try:
-            os_arg = "-n" if platform_os().lower() == "windows" else "-c"
-            popen_args = ["ping", os_arg, "5", host]
-            pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-            output = str(pinging.communicate(timeout = 10)[0]).split("nrtt ", 1)[1][:-3]
-            pinging.terminate()
-            return f'Latency Min/Avg/Max/SD (5 pings): {output.split(" = ", 1)[1]}'
-        except subprocess.TimeoutExpired:
-            pinging.terminate()
-            return "Pinging process timed out (severe latency or packet loss)"
-
-print(NetworkLookup().domain_ping("96.118.139.252"))
+#print(NetworkLookup().domain_lookup("mooc.fi"))

@@ -30,9 +30,9 @@ class LookupView:
         if output_value == "Domain is available!":
             self._label_domain_button.configure(foreground="green")
         elif output_value[:23] == "Domain is already taken":
-            self._label_domain_button.configure(foreground="red")
+            self._label_domain_button.configure(foreground="blue")
         else:
-            self._label_domain_button.configure(foreground="")
+            self._label_domain_button.configure(foreground="red")
 
     def _handle_ip_mac_button_click(self):
         output_own_public_ip = NetworkLookup.find_own_public_ip(self)
@@ -52,22 +52,22 @@ class LookupView:
         foreground="blue")
         self._label_mac_button.grid(
             sticky="W", row=10, column=0, columnspan=2, padx=2, pady=2)
-
+        
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         self.domain_name_entry = ttk.Entry(master=self._root)
 
         domain_check_button = ttk.Button(
             master=self._root, 
-            text="Type in a domain name to check its availability (e.g. mooc.fi)",
+            text="Enter hostname or IP (e.g. helsinki.fi or 128.214.222.24)",
             command=self._handle_domain_button_click)
 
         ip_mac_fetch_button = ttk.Button(
             master=self._root, 
-            text="Fetch your IP & MAC addresses",
+            text="Fetch my IP & MAC addresses",
             command=self._handle_ip_mac_button_click)
                
-        self._frame.grid_columnconfigure(1, weight=1, minsize=300)  
-        self.domain_name_entry.grid(sticky="NW", row=0, column=0, columnspan=2, padx=2, pady=2)    
+        self._frame.grid_columnconfigure(1, weight=1, minsize=400)  
+        self.domain_name_entry.grid(sticky="NW", row=0, column=0, columnspan=2, padx=2, pady=2)   
         domain_check_button.grid(sticky="NW", row=1, column=0, columnspan=2, padx=2, pady=2) 
         ip_mac_fetch_button.grid(sticky="W", row=7, column=0, columnspan=2, padx=2, pady=2)

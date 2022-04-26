@@ -1,10 +1,12 @@
-## Pakkauskaavio
+### Pakkauskaavio
 
 Yleiskatsaus sovelluksen kolmitasoisesta kerrosarkkitehtuurista:
 
 ![Pakkauskaavio](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/pakkauskaavio.png "Pakkauskaavio")
 
-## Sovelluslogiikan pääluokka
+Tietokantatoiminnoista vastaava repositories-koodi tulossa seuraavalla viikolla.
+
+### Sovelluslogiikan pääluokka
 
 ```mermaid
 classDiagram
@@ -17,7 +19,7 @@ classDiagram
     }
 ```
 
-## Verkkotunnuksen haku
+### Verkkotunnuksen haku
 
 ```mermaid
 sequenceDiagram
@@ -25,7 +27,7 @@ sequenceDiagram
     participant LookupView
     participant NetworkLookup
     participant LookupRepository
-    User->>LookupView: type in domain/ip and click enter
+    User->>LookupView: type in domain/ip, click enter
     LookupView->>NetworkLookup: domain_lookup("mooc.fi")
     NetworkLookup-->>LookupView: domain data
     NetworkLookup->>LookupRepository: save_history("mooc.fi")

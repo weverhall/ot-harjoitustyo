@@ -13,7 +13,7 @@ class TestLookupService(unittest.TestCase):
 
     def test_finds_available_ip(self):
         self.assertEqual(self.lookup.domain_lookup("96.118.139.252"), 
-        "IP resolve failure (domain likely available)")
+        "Domain is available (or PTR record is invalid)")
 
     def test_finds_invalid_domain(self):
         self.assertEqual(self.lookup.domain_lookup("invalid#domain%,,com"), 

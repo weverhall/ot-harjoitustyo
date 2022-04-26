@@ -9,7 +9,8 @@ import validators
 
 class NetworkLookup:
     def domain_lookup(self, host):
-        if [validators.domain(host) or validators.ipv4(host)].count(True) == 0:
+        if [validators.domain(host) or validators.ipv4(host) or validators.ipv6(host)]\
+            .count(True) == 0:
             return "Invalid domain name or IP"
 
         try:
@@ -60,7 +61,8 @@ class NetworkLookup:
                 public_ip = "127.0.0.1"
 
         if public_ip == "127.0.0.1" or\
-            [validators.ipv6(public_ip), validators.ipv4(public_ip)].count(True) == 0:
+            [validators.ipv6(public_ip), validators.ipv4(public_ip)]\
+            .count(True) == 0:
             return "Failed to fetch public IP address"
         if validators.ipv4(public_ip) is True:
             return f"Public IP: {public_ip} (IPv4)"

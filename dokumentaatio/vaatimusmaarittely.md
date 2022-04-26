@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovellus tarjoaa pääasiassa osoitteisiin liittyviä tietoverkkopalveluja.
+Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja.
 
 ## Sovelluksen toiminnallisuus
 

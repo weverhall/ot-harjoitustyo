@@ -1,8 +1,9 @@
 # NetLookApp
-Sovellus tarjoaa tietoverkon osoitehakupalveluja:
+Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
 - Verkkotunnusten saatavuushaku IP-osoitteen tai domainnimen perusteella
-  - Varatun verkkotunnuksen latenssin mittaus ja sen IP:n tai FQDN:n nouto
+  - Varatun domainin IP:n tai FQDN:n nouto riippuen haun tyypistä
+  - Latenssin mittaus
 - Oman yksityisen ja julkisen IP:n nouto
   - IPv4- ja IPv6-osoitetyypin tarkastus
 - Oman MAC-osoitteen nouto

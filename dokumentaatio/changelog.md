@@ -23,4 +23,4 @@
   - IP:t määritelty joko IPv4- tai IPv6-tyyppisiksi
 - Verkkotunnusten saatavuuden haku nyt myös IP:n perustella
   - Varatun IP:n tapauksessa noutaa FQDN:n
-- Pingaa varattua verkkotunnusta ja ilmoittaa latenssin
+- Pingaa varattua domainia ja ilmoittaa latenssin

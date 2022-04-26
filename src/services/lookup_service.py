@@ -26,15 +26,15 @@ class NetworkLookup:
         except socket.herror:
             return "Domain is available (or PTR record is invalid)"
 
-    def _domain_ping(self, host):
+    def _domain_ping(host):
         try:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
                 pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
                 output = str(pinging.communicate(timeout = 0.75)[0])
                 pinging.terminate()
-                if "100%" in output:
-                    return "Pinging process timed out (severe latency or packet loss)"
+                if "Destination port unreachable" in output or "100%" in output:
+                    return "Pinging process failed (destination port unreachable)"
                 parsed_output = output.split("Minimum = ", 1)[1]
                 return f'Latency: {parsed_output.split("ms", 1)[0]} ms'
 
@@ -42,6 +42,8 @@ class NetworkLookup:
             pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
             output = str(pinging.communicate(timeout = 0.75)[0])
             pinging.terminate()
+            if "Destination port unreachable" in output or "100%" in output:
+                return "Pinging process failed (destination port unreachable)"
             parsed_output = output.split("mdev = ", 1)[1]
             return f'Latency: {parsed_output.split("/", 3)[1]} ms'
 
@@ -94,6 +96,3 @@ class NetworkLookup:
         elif second_least_significant_bit == "1":
             mac_type = "LAA"
         return f"MAC: {formatted_mac} ({mac_type})"
-
-
-print(NetworkLookup()._domain_ping("124.240.242.109"))

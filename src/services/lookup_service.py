@@ -31,7 +31,7 @@ class NetworkLookup:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
                 pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-                output = str(pinging.communicate(timeout = 1)[0])
+                output = str(pinging.communicate(timeout = 0.75)[0])
                 pinging.terminate()
                 if "100%" in output:
                     return "Pinging process timed out (severe latency or packet loss)"
@@ -40,7 +40,7 @@ class NetworkLookup:
 
             popen_args = ["ping", "-c", "1", host]
             pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-            output = str(pinging.communicate(timeout = 1)[0])
+            output = str(pinging.communicate(timeout = 0.75)[0])
             pinging.terminate()
             parsed_output = output.split("mdev = ", 1)[1]
             return f'Latency: {parsed_output.split("/", 3)[1]} ms'

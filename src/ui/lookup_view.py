@@ -64,7 +64,7 @@ class LookupView:
 
         ip_mac_fetch_button = ttk.Button(
             master=self._root, 
-            text="Fetch personal IP & MAC addresses",
+            text="Fetch your IP & MAC addresses",
             command=self._handle_ip_mac_button_click)
                
         self._frame.grid_columnconfigure(1, weight=1, minsize=400)  

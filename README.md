@@ -2,8 +2,7 @@
 Sovellus tarjoaa tietoverkon osoitehakupalveluja:
 
 - Verkkotunnusten saatavuushaku IP-osoitteen tai domainnimen perusteella
-  - Varatun verkkotunnuksen IP:n ja FQDN:n nouto
-  - Varatun verkkotunnuksen latenssin mittaus
+  - Varatun verkkotunnuksen latenssin mittaus ja sen IP:n tai FQDN:n nouto
 - Oman yksityisen ja julkisen IP:n nouto
   - IPv4- ja IPv6-osoitetyypin tarkastus
 - Oman MAC-osoitteen nouto

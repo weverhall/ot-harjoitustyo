@@ -4,7 +4,6 @@ from platform import system as platform_os
 from uuid import getnode
 from urllib.request import urlopen
 from urllib.error import URLError
-from dns.resolver import resolve, NXDOMAIN, NoNameservers, NoAnswer
 import validators
 
 
@@ -15,18 +14,16 @@ class NetworkLookup:
 
         try:
             if validators.domain(host):
-                return f"Domain is taken (IPv4: {resolve(host)[0]})"\
+                return f"Domain is taken (IPv4: {socket.gethostbyname(host)})"\
                        f"\n{NetworkLookup.domain_ping(host)}"
 
             return f"Domain is taken (FQDN: {socket.gethostbyaddr(host)[0]})"\
                    f"\n{NetworkLookup.domain_ping(host)}"
 
-        except NXDOMAIN:
+        except socket.gaierror:
             return "Domain is available!"
         except socket.herror:
-            return "IP resolve failure (domain likely available)"
-        except (NoNameservers, NoAnswer):
-            return "DNS response failure"
+            return "Domain is available (or PTR record is invalid)"
 
     def domain_ping(host):
         try:

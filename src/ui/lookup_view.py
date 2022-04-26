@@ -27,8 +27,7 @@ class LookupView:
         self._label_domain_button.grid(
             sticky="NW", row=4, column=0, columnspan=2, padx=2, pady=2)
 
-        if output_value == "Domain is available!" or \
-           output_value == "IP resolve failure (domain likely available)":
+        if output_value[:19] == "Domain is available":
             self._label_domain_button.configure(foreground="green")
         elif output_value[:15] == "Domain is taken":
             self._label_domain_button.configure(foreground="blue")

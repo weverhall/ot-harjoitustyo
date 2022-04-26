@@ -6,7 +6,7 @@ Yleiskatsaus sovelluksen kolmitasoisesta kerrosarkkitehtuurista:
 
 ## Sovelluslogiikan pääluokka
 
-```
+```mermaid
 classDiagram
     class NetworkLookup{   
         +domain_lookup(host)

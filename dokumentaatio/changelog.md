@@ -19,7 +19,7 @@
 ## Viikko 5
 
 - Oikeasti hakee myös julkisen IP-osoitteen
-  - Oletusarvoisesti näyttää sekä yksityisen/paikallisen että julkisen IP:n erikseen
+  - Oletusarvoisesti näyttää sekä julkisen että yksityisen/paikallisen IP:n erikseen
   - IP:t määritelty joko IPv4- tai IPv6-tyyppisiksi
 - Verkkotunnusten saatavuuden haku nyt myös IP:n perustella
   - Varatun IP:n tapauksessa noutaa FQDN:n

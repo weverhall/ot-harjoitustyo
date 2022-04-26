@@ -1,4 +1,5 @@
 # NetLookApp
+
 Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
 - Verkkotunnusten saatavuushaku IP-osoitteen tai domainnimen perusteella
@@ -8,6 +9,10 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
   - IPv4- ja IPv6-osoitetyypin tarkastus
 - Oman MAC-osoitteen nouto
   - UAA- ja LAA-osoitetyypin tarkastus
+
+## Release GitHubissa
+
+[Viikko 5](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Dokumentaatio
 

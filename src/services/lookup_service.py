@@ -31,7 +31,7 @@ class NetworkLookup:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
                 pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-                output = str(pinging.communicate(timeout = 0.82)[0])
+                output = str(pinging.communicate(timeout = 0.85)[0])
                 pinging.terminate()
                 if "Destination port unreachable" in output or "100%" in output:
                     return "Pinging process failed (destination port unreachable)"
@@ -40,7 +40,7 @@ class NetworkLookup:
 
             popen_args = ["ping", "-c", "1", host]
             pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-            output = str(pinging.communicate(timeout = 0.82)[0])
+            output = str(pinging.communicate(timeout = 0.85)[0])
             pinging.terminate()
             if "Destination port unreachable" in output or "100%" in output:
                 return "Pinging process failed (destination port unreachable)"

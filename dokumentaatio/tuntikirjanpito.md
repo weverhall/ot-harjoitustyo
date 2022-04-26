@@ -10,10 +10,11 @@
 |  8.4  |   4  | tiedostojen ja luokkien rungon selvittelyä |
 |  9.4  |   8  | uutta toiminnallisuutta, dokumentaation päivitys uuteen projuun, testien suunnittelua |
 | 11.4  |   5  | sovelluslogiikan hiontaa, testien tekoa ja pylint, pytest, gitignore, invoke yms. filujen päivitystä |
-| 12.4  |   2  | varmistettu sovelluksen toimivuus virtuaalityöasemalla, uploadattu pakkauskaavio ja päivitetty dokumentaatiota
-| 13.4  |   4  | uutta toiminnallisuutta, päivitetty dokumentaatiota
-| 15.4  |   1  | pylint-korjauksia
-| 23.4  |   6  | uutta toiminnallisuutta ja vanhan parantelua
-| 25.4  |   6  | refaktorointia, testejä, päivitetty dokumentaatiota
+| 12.4  |   2  | varmistettu sovelluksen toimivuus virtuaalityöasemalla, uploadattu pakkauskaavio ja päivitetty dokumentaatiota |
+| 13.4  |   4  | uutta toiminnallisuutta, päivitetty dokumentaatiota |
+| 15.4  |   1  | pylint-korjauksia |
+| 23.4  |   6  | uutta toiminnallisuutta ja vanhan parantelua |
+| 25.4  |   6  | refaktorointia, testejä, päivitetty dokumentaatiota |
+| 26.4  |   4  | lisää refaktorointia, päivitetty arkkitehtuurikuvaus, testattu toimivuus cubblilla, github release 1 |
 |       |      |
-|  yht. | =72  |
+|  yht. | =76  |

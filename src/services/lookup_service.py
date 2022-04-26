@@ -9,24 +9,24 @@ import validators
 
 class NetworkLookup:
     def domain_lookup(self, host):
-        if [validators.domain(host) or validators.ipv4(host) or validators.ipv6(host)]\
+        if [validators.domain(host), validators.ipv4(host), validators.ipv6(host)]\
             .count(True) == 0:
             return "Invalid domain name or IP"
 
         try:
             if validators.domain(host):
                 return f"Domain is taken (IPv4: {socket.gethostbyname(host)})"\
-                       f"\n{NetworkLookup.domain_ping(host)}"
+                       f"\n{NetworkLookup._domain_ping(host)}"
 
             return f"Domain is taken (FQDN: {socket.gethostbyaddr(host)[0]})"\
-                   f"\n{NetworkLookup.domain_ping(host)}"
+                   f"\n{NetworkLookup._domain_ping(host)}"
 
         except socket.gaierror:
             return "Domain is available!"
         except socket.herror:
             return "Domain is available (or PTR record is invalid)"
 
-    def domain_ping(host):
+    def _domain_ping(host):
         try:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]

@@ -26,7 +26,7 @@ class NetworkLookup:
         except socket.herror:
             return "Domain is available (or PTR record is invalid)"
 
-    def _domain_ping(host):
+    def _domain_ping(self, host):
         try:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
@@ -94,3 +94,6 @@ class NetworkLookup:
         elif second_least_significant_bit == "1":
             mac_type = "LAA"
         return f"MAC: {formatted_mac} ({mac_type})"
+
+
+print(NetworkLookup()._domain_ping("124.240.242.109"))

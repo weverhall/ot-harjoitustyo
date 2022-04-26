@@ -6,6 +6,7 @@ Yleiskatsaus sovelluksen kolmitasoisesta kerrosarkkitehtuurista:
 
 ## Sovelluslogiikan pääluokka
 
+```
 classDiagram
     class NetworkLookup{   
         +domain_lookup(host)
@@ -14,6 +15,7 @@ classDiagram
         +find_local_ip()
         +find_mac()
     }
+```
 
 ## Verkkotunnuksen haku
 

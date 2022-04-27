@@ -38,7 +38,10 @@ Windows:
 
 ```bash
 poetry install
-poetry run invoke start-windows
+poetry run invoke start-windows 
+# tai jos tasks.py ei ole vielä ajan tasalla: 
+poetry install
+python src/index.py
 ```
 
 ## Testaus ja Pylint

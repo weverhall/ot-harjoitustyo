@@ -10,6 +10,8 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - Oman MAC-osoitteen nouto
   - UAA- ja LAA-osoitetyypin tarkastus
 
+Ohjelma toimii useimmilla Windows, Linux ja macOS käyttöjärjestelmillä.
+
 ## Dokumentaatio
 
 - [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
@@ -17,31 +19,21 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 
-## Alustus ja lataus
+## Alustus
 
-[Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download) ensin, että Python-versiosi on 3.8 tai uudempi, ja asenna Poetry koneellesi [ohjeiden](https://python-poetry.org/docs/#installation) mukaisesti.
-
-Lataa sitten sovellus [release-linkin](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) kautta. 
+- [Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download), että Python-versiosi on 3.8 tai uudempi
+- [Asenna](https://python-poetry.org/docs/#installation) Poetry koneellesi
+- [Lataa](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) sovelluksen GitHub release
 
 Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, niin olet valmis suorittamaan Poetry-komentoja.
 
-## Asennus ja käynnistys
+## Käynnistys
 
-Linux/Mac:
+Asenna riippuvuudet ja käynnistä sovellus:
 
 ```bash
 poetry install
 poetry run invoke start
-```
-
-Windows:
-
-```bash
-poetry install
-poetry run invoke start-windows 
-# tai jos tasks.py ei ole vielä ajan tasalla: 
-poetry install
-python src/index.py
 ```
 
 ## Testaus ja Pylint

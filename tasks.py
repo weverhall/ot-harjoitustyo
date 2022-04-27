@@ -6,10 +6,6 @@ def start(ctx):
     ctx.run("python3 src/index.py", pty=True)   
 
 @task
-def start_windows(ctx):
-    ctx.run("python src/index.py", pty=True)
-
-@task
 def test(ctx):
     ctx.run("pytest src", pty=True)   
 

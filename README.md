@@ -23,9 +23,9 @@ Ohjelma toimii useimmilla Windows, Linux ja macOS käyttöjärjestelmillä.
 
 - [Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download), että Python-versiosi on 3.8 tai uudempi
 - [Asenna](https://python-poetry.org/docs/#installation) Poetry koneellesi
-- [Lataa](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) sovelluksen GitHub release
+- [Lataa](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) ja pura sovelluksen viimeisin GitHub release
 
-Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, niin olet valmis suorittamaan Poetry-komentoja.
+Siirry vielä komentorivillä "ot-harjoitustyo" kansioon, niin olet valmis suorittamaan Poetry-komentoja.
 
 ## Käynnistys
 

@@ -25,15 +25,22 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
 [Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download) ensin, että Python-versiosi on 3.8 tai uudempi. Lataa sitten Poetry koneellesi [ohjeiden](https://python-poetry.org/docs/#installation) mukaisesti.
 
-Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, jonka sait releasen avulla.
+Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, jonka sait [release-linkin](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) kautta.
 
 ## Asennus ja käynnistys
 
-Asenna riippuvuudet ja käynnistä sovellus:
+Linux/Mac:
 
 ```bash
 poetry install
 poetry run invoke start
+```
+
+Windows:
+
+```bash
+poetry install
+poetry run invoke start-windows
 ```
 
 ## Testaus ja Pylint
@@ -44,7 +51,7 @@ Suorita testit:
 poetry run invoke test
 ```
 
-Luo testikattavuusraportti htmlcov-hakemistoon:
+Luo testikattavuusraportti index.html htmlcov-kansioon:
 
 ```bash
 poetry run invoke coverage-report

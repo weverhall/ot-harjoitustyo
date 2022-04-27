@@ -10,10 +10,6 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - Oman MAC-osoitteen nouto
   - UAA- ja LAA-osoitetyypin tarkastus
 
-## Release
-
-[⭐Viikko 5⭐](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5)
-
 ## Dokumentaatio
 
 - [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
@@ -21,11 +17,11 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 
-## Alustus
+## Alustus ja lataus
 
-[Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download) ensin, että Python-versiosi on 3.8 tai uudempi. Lataa sitten Poetry koneellesi [ohjeiden](https://python-poetry.org/docs/#installation) mukaisesti.
+[Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download) ensin, että Python-versiosi on 3.8 tai uudempi. Asenna sitten Poetry koneellesi [ohjeiden](https://python-poetry.org/docs/#installation) mukaisesti.
 
-Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, jonka saat [release-linkin](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) kautta.
+Lataa sovellus [release-linkin](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) kautta. Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, niin olet valmis suorittamaan Poetry-komentoja.
 
 ## Asennus ja käynnistys
 

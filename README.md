@@ -21,7 +21,9 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
 [Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download) ensin, että Python-versiosi on 3.8 tai uudempi. Asenna sitten Poetry koneellesi [ohjeiden](https://python-poetry.org/docs/#installation) mukaisesti.
 
-Lataa sovellus [release-linkin](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) kautta. Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, niin olet valmis suorittamaan Poetry-komentoja.
+Lataa sitten sovellus [release-linkin](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) kautta. 
+
+Varmista vielä, että olet terminaalissa "ot-harjoitustyo" kansiossa, niin olet valmis suorittamaan Poetry-komentoja.
 
 ## Asennus ja käynnistys
 

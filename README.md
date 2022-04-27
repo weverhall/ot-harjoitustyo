@@ -19,7 +19,7 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
 ## Alustus ja lataus
 
-[Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download) ensin, että Python-versiosi on 3.8 tai uudempi. Asenna sitten Poetry koneellesi [ohjeiden](https://python-poetry.org/docs/#installation) mukaisesti.
+[Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download) ensin, että Python-versiosi on 3.8 tai uudempi, ja asenna Poetry koneellesi [ohjeiden](https://python-poetry.org/docs/#installation) mukaisesti.
 
 Lataa sitten sovellus [release-linkin](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko5) kautta. 
 

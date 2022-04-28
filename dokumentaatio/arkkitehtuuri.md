@@ -4,7 +4,7 @@ Yleiskatsaus sovelluksen kolmitasoisesta kerrosarkkitehtuurista:
 
 ![Pakkauskaavio](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/pakkauskaavio.png "Pakkauskaavio")
 
-Tietokantatoiminnoista vastaava repositories-koodi tulossa seuraavalla viikolla.
+Tietokantatoiminnoista vastaava repositories-koodi (ja sen oma, erillinen näkymä) tulossa seuraavalla viikolla.
 
 ### Sovelluslogiikan pääluokka
 
@@ -12,7 +12,7 @@ Tietokantatoiminnoista vastaava repositories-koodi tulossa seuraavalla viikolla.
 classDiagram
     class NetworkLookup{   
         +domain_lookup(host)
-        #domain_ping()
+        #domain_ping(host)
         +find_own_public_ip()
         +find_local_ip()
         +find_mac()

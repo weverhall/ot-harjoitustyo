@@ -1,4 +1,5 @@
 from ui.lookup_view import LookupView
+from ui.history_view import HistoryView
 
 
 class UI:
@@ -14,13 +15,16 @@ class UI:
             self._current_view.destroy()
         self._current_view = None
 
-    def handle_lookup_view(self):
-        self._show_lookup_view()
-
     def _show_lookup_view(self):
         self._hide_current_view()
         self._current_view = LookupView(
             self._root, 
-            self.handle_lookup_view
-        )
+            self._show_history_view)
+        self._current_view.grid()
+
+    def _show_history_view(self):
+        self._hide_current_view()
+        self._current_view = HistoryView(
+            self._root, 
+            self._show_lookup_view)
         self._current_view.grid()

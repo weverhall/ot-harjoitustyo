@@ -19,7 +19,7 @@ Ohjelma toimii useimmilla Windows, Linux ja macOS käyttöjärjestelmillä.
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 
-## Alustus
+## Alustus ja GitHub release
 
 - [Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download), että Python-versiosi on 3.8 tai uudempi
 - [Asenna](https://python-poetry.org/docs/#installation) Poetry koneellesi
@@ -44,7 +44,7 @@ Suorita testit:
 poetry run invoke test
 ```
 
-Luo testikattavuusraportti index.html htmlcov-kansioon:
+Luo testikattavuusraportti (index.html) htmlcov-kansioon:
 
 ```bash
 poetry run invoke coverage-report

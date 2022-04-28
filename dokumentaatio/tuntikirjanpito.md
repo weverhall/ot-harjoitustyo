@@ -16,5 +16,7 @@
 | 23.4  |   6  | uutta toiminnallisuutta ja vanhan parantelua |
 | 25.4  |   6  | refaktorointia, testejä, päivitetty dokumentaatiota |
 | 26.4  |   4  | lisää refaktorointia, päivitetty arkkitehtuurikuvaus, testattu toimivuus cubblilla, github release 1 |
+| 27.4  |   1  | päivitetty dokumentaatiota |
+| 28.4  |      |
 |       |      |
-|  yht. | =76  |
+|  yht. | =77  |

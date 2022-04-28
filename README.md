@@ -10,7 +10,7 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - Oman MAC-osoitteen nouto
   - UAA- ja LAA-osoitetyypin tarkastus
 
-Ohjelma toimii useimmilla Windows, Linux ja macOS käyttöjärjestelmillä.
+Ohjelma toimii yleisimmillä Windows, Linux ja macOS versioilla.
 
 ## Dokumentaatio
 

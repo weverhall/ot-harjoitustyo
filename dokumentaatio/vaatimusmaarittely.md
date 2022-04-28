@@ -6,9 +6,13 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja.
 
 ## Sovelluksen toiminnallisuus
 
-### Käyttäjät ja käyttöliittymä
+### Käyttäjät
 
-Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. Käyttäjän perusnäkymässä on suoraan saatavilla kaikki toiminnallisuus. Mahdollisia tallennettuja tietoja kunkin toiminnallisuuden osalta on saatavilla erillisestä tietokantanäkymästä. 
+Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. 
+
+### Käyttöliittymä
+
+Päävalikossa käyttäjä näkee MAC- ja IP-osoitteensa. Tästä valikosta pääsee haku- ja historianäkymiin, eli eri näkymiä on yhteensä kolme.
 
 ### Perustoiminnallisuus
 

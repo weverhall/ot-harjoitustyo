@@ -24,3 +24,7 @@
 - Verkkotunnusten saatavuuden haku nyt myös IP:n perustella
   - Varatun IP:n tapauksessa noutaa FQDN:n
 - Pingaa varattua domainia ja ilmoittaa latenssin
+
+## Viikko 6
+
+- Käyttöliittymää paranneltu ja laajennettu: nyt kolme eri näkymää yhden sijasta

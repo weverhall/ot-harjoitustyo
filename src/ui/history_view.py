@@ -8,8 +8,8 @@ class HistoryView:
         self._handle_show_main_view = handle_show_main_view
         self._initialize()
 
-    def pack(self):
-        self._frame.pack()
+    def grid(self):
+        self._frame.grid()
 
     def destroy(self):
         self._frame.destroy()
@@ -22,5 +22,4 @@ class HistoryView:
             text="Return to Main Menu",
             command=self._handle_show_main_view)
 
-        main_view_button.pack(sticky="NW", row=0, column=0, rowspan=1, 
-                            padx=3, pady=3, ipadx=15, ipady=3)
+        main_view_button.grid(sticky="NW", row=0, column=0)

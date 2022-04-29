@@ -28,19 +28,19 @@ class MainView:
         self._label_own_public_ip = ttk.Label(
             master=self._frame,
             text=NetworkLookup.find_own_public_ip(self),
-            font=("Arial", "10"),
+            font=("Arial", "11"),
             foreground="blue")
 
         self._label_local_ip = ttk.Label(
             master=self._frame,
             text=NetworkLookup.find_local_ip(self),
-            font=("Arial", "10"),
+            font=("Arial", "11"),
             foreground="blue")
 
         self._label_mac = ttk.Label(
             master=self._frame,
             text=NetworkLookup.find_mac(self),
-            font=("Arial", "10"),
+            font=("Arial", "11"),
             foreground="blue")
 
         self.lookup_view_button = ttk.Button(
@@ -53,7 +53,9 @@ class MainView:
             text="Domain History",
             command=self._handle_show_history_view)
 
-        self._label_heading.grid(row=0, column=0, columnspan=2, padx=5, pady=3)
+
+        self._frame.columnconfigure(0, minsize=275)
+        self._label_heading.grid(sticky="NW", row=0, column=0, padx=5, pady=3)
 
         self.lookup_view_button.grid(sticky="NW", row=1, column=0, columnspan=1,
                                     padx=5, pady=10, ipadx=7, ipady=2)
@@ -63,4 +65,4 @@ class MainView:
         self._label_own_public_ip.grid(sticky="W", row=4, column=0, padx=5, pady=1)
         self._label_local_ip.grid(sticky="W", row=5, column=0, padx=5, pady=1)
         self._label_mac.grid(sticky="W", row=6, column=0, padx=5, pady=1)
-        
+

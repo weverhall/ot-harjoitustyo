@@ -1,13 +1,15 @@
 from tkinter import Tk
 from ui.ui import UI
+from platform import system as platform_os
 
 
 def main():
     window = Tk()
 
-    window.geometry("426x240")
+    if platform_os().lower() == "linux":
+        window.config(background="gray85")
     window.title("NetLookApp")
-    window["bg"] = "SystemButtonFace"
+    
 
     UI(window).start()
 

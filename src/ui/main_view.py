@@ -21,7 +21,7 @@ class MainView:
 
         self._label_heading = ttk.Label(
             master=self._frame,
-            text="Welcome to NetLookApp: A Comfy Network Lookup Tool",
+            text="Welcome to NetLookApp:\nA Comfy Network Lookup Tool",
             font=("Arial", "14"),
             foreground="black")
 
@@ -53,14 +53,14 @@ class MainView:
             text="Domain History",
             command=self._handle_show_history_view)
 
-        self._label_heading.grid(row=0, column=0, padx=5, pady=3)
+        self._label_heading.grid(row=0, column=0, columnspan=2, padx=5, pady=3)
 
-        self.lookup_view_button.grid(sticky="NW", row=1, column=0, 
-                                    padx=5, pady=10, ipadx=32, ipady=2)
-        self.history_view_button.grid(row=1, column=0, 
-                                    padx=5, pady=10, ipadx=32, ipady=2)
+        self.lookup_view_button.grid(sticky="NW", row=1, column=0, columnspan=1,
+                                    padx=5, pady=10, ipadx=7, ipady=2)
+        self.history_view_button.grid(sticky="NE", row=1, column=0, columnspan=1,
+                                    padx=5, pady=10, ipadx=7, ipady=2)
 
-        self._label_own_public_ip.grid(sticky="NW", row=4, column=0, padx=5, pady=1)
-        self._label_local_ip.grid(sticky="NW", row=5, column=0, padx=5, pady=1)
+        self._label_own_public_ip.grid(sticky="W", row=4, column=0, padx=5, pady=1)
+        self._label_local_ip.grid(sticky="W", row=5, column=0, padx=5, pady=1)
         self._label_mac.grid(sticky="W", row=6, column=0, padx=5, pady=1)
         

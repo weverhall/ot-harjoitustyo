@@ -2,11 +2,11 @@
 
 ## Viikko 3
 
-- Tehty vielä vanhaa, onnetonta, riivattua ja aivan surkeaa reseptisovellusta
+- Tehty vielä vanhaa, onnetonta ja mahdollisesti riivattua reseptisovellusta
 
 ## Viikko 4
 
-- Uuden loisteliaan projektin sarastus, eli tietoverkkosovelluksen alku
+- Uuden projektin sarastus, eli tietoverkkosovelluksen alku
 - Lisätty NetworkLookup-luokka, joka vastaa sovelluslogiikan koodista
   - Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
     - Varatun verkkotunnuksen IP:n haku
@@ -27,4 +27,4 @@
 
 ## Viikko 6
 
-- Käyttöliittymää paranneltu ja laajennettu: nyt kolme eri näkymää yhden sijasta
+- Käyttöliittymää siistitty ja laajennettu: nyt kolme eri näkymää yhden sijasta

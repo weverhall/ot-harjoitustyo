@@ -9,8 +9,8 @@ import validators
 
 class NetworkLookup:
     def domain_lookup(self, host):
-        if [validators.domain(host), validators.ipv4(host),\
-            validators.ipv6(host)].count(True) == 0:
+        if [validators.domain(host), validators.ipv4(host),
+                validators.ipv6(host)].count(True) == 0:
             return "Invalid domain name or IP"
 
         try:
@@ -30,8 +30,9 @@ class NetworkLookup:
         try:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
-                pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-                output = str(pinging.communicate(timeout = 0.85)[0])
+                pinging = subprocess.Popen(
+                    (popen_args), stdout=subprocess.PIPE)
+                output = str(pinging.communicate(timeout=0.85)[0])
                 pinging.terminate()
                 if "Destination port unreachable" in output or "100%" in output:
                     return "Pinging process failed (destination port unreachable)"
@@ -39,8 +40,8 @@ class NetworkLookup:
                 return f'Latency: {parsed_output.split("ms", 1)[0]} ms'
 
             popen_args = ["ping", "-c", "1", host]
-            pinging = subprocess.Popen((popen_args), stdout = subprocess.PIPE)
-            output = str(pinging.communicate(timeout = 0.85)[0])
+            pinging = subprocess.Popen((popen_args), stdout=subprocess.PIPE)
+            output = str(pinging.communicate(timeout=0.85)[0])
             pinging.terminate()
             if "Destination port unreachable" in output or "100%" in output:
                 return "Pinging process failed (destination port unreachable)"
@@ -62,7 +63,7 @@ class NetworkLookup:
             except URLError:
                 public_ip = "127.0.0.1"
 
-        if public_ip == "127.0.0.1" or [validators.ipv6(public_ip),\
+        if public_ip == "127.0.0.1" or [validators.ipv6(public_ip),
            validators.ipv4(public_ip)].count(True) == 0:
             return "Failed to fetch public IP address"
         if validators.ipv4(public_ip) is True:
@@ -84,12 +85,13 @@ class NetworkLookup:
 
     def find_mac(self):
         formatted_mac = "".join(c + ":" if i % 2 else c for i,
-        c in enumerate(hex(getnode())[2:].zfill(12)))[:-1]
+                                c in enumerate(hex(getnode())[2:].zfill(12)))[:-1]
 
         if validators.mac_address(formatted_mac) is not True:
             return "Failed to fetch MAC address"
 
-        second_least_significant_bit = str(bin(int(formatted_mac[:2], 16)))[2:].zfill(8)[-2]
+        second_least_significant_bit = str(bin(int(formatted_mac[:2], 16)))[
+            2:].zfill(8)[-2]
         if second_least_significant_bit == "0":
             mac_type = "UAA"
         elif second_least_significant_bit == "1":

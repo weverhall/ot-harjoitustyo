@@ -19,7 +19,7 @@ class UI:
     def _show_main_view(self):
         self._hide_current_view()
         self._current_view = MainView(
-            self._root, 
+            self._root,
             self._show_lookup_view,
             self._show_history_view)
         self._current_view.grid()
@@ -27,13 +27,13 @@ class UI:
     def _show_lookup_view(self):
         self._hide_current_view()
         self._current_view = LookupView(
-            self._root, 
+            self._root,
             self._show_main_view)
         self._current_view.grid()
 
     def _show_history_view(self):
         self._hide_current_view()
         self._current_view = HistoryView(
-            self._root, 
+            self._root,
             self._show_main_view)
         self._current_view.grid()

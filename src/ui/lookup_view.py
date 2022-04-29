@@ -20,7 +20,7 @@ class LookupView:
         output_value = NetworkLookup.domain_lookup(self, entry_value)
 
         self._label_domain_button.config(text=output_value,
-            font=("Arial", "11"))
+                                         font=("Arial", "11"))
         self._label_domain_button.grid(
             sticky="NW", row=4, column=0, padx=3, pady=3)
 
@@ -30,7 +30,6 @@ class LookupView:
             self._label_domain_button.configure(foreground="blue")
         else:
             self._label_domain_button.configure(foreground="red")
-
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -45,7 +44,7 @@ class LookupView:
             font=("Arial", "14"))
 
         domain_check_button = ttk.Button(
-            master=self._frame, 
+            master=self._frame,
             text="Fetch Data",
             command=self._handle_domain_button_click)
 
@@ -54,12 +53,12 @@ class LookupView:
             text="Return to Main Menu",
             command=self._handle_show_main_view)
 
-        main_view_button.grid(sticky="NW", row=0, column=0)            
+        main_view_button.grid(sticky="NW", row=0, column=0)
 
         self._label_heading.grid(sticky="W", row=1, column=0, padx=5, pady=7)
 
         self.domain_name_entry.grid(sticky="NW", row=2, column=0,
-                                    padx=5, pady=3, ipadx=0, ipady=2)
+                                    padx=5, pady=3, ipadx=20, ipady=2)
 
         domain_check_button.grid(sticky="NW", row=3, column=0,
-                                    padx=5, pady=3, ipadx=7, ipady=2)
+                                 padx=5, pady=3, ipadx=7, ipady=2)

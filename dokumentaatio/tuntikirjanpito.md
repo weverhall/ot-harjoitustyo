@@ -18,5 +18,5 @@
 | 26.4  |   4  | lisää refaktorointia, päivitetty arkkitehtuurikuvaus, testattu toimivuus cubblilla, github release 1 |
 | 27.4  |   1  | päivitetty dokumentaatiota |
 | 28.4  |   5  | tehty laajempi käyttöliittymä ja eriytetty luokkia edelleen
-|       |      |
-|  yht. | =83  |
+| 29.4  |   1  | paranneltu käyttöliittymää
+|  yht. | =84  |

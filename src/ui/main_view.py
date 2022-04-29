@@ -44,25 +44,23 @@ class MainView:
             foreground="blue")
 
         self.lookup_view_button = ttk.Button(
-            master=self._frame, 
+            master=self._frame,
             text="Domain Lookup",
             command=self._handle_show_lookup_view)
 
         self.history_view_button = ttk.Button(
-            master=self._frame, 
+            master=self._frame,
             text="Domain History",
             command=self._handle_show_history_view)
-
 
         self._frame.columnconfigure(0, minsize=275)
         self._label_heading.grid(sticky="NW", row=0, column=0, padx=5, pady=3)
 
-        self.lookup_view_button.grid(sticky="NW", row=1, column=0, columnspan=1,
-                                    padx=5, pady=10, ipadx=7, ipady=2)
-        self.history_view_button.grid(sticky="NE", row=1, column=0, columnspan=1,
-                                    padx=5, pady=10, ipadx=7, ipady=2)
+        self.lookup_view_button.grid(sticky="NW", row=1, column=0,
+                                     padx=5, pady=10, ipadx=7, ipady=2)
+        self.history_view_button.grid(sticky="NE", row=1, column=0,
+                                      padx=5, pady=10, ipadx=7, ipady=2)
 
         self._label_own_public_ip.grid(sticky="W", row=4, column=0, padx=5, pady=1)
         self._label_local_ip.grid(sticky="W", row=5, column=0, padx=5, pady=1)
         self._label_mac.grid(sticky="W", row=6, column=0, padx=5, pady=1)
-

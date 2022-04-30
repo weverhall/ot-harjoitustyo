@@ -22,6 +22,8 @@ class HistoryRepository:
     def insert(self, host, address, ping):
         cursor = self._connection.cursor()
 
+        ping = ping[9:-3]
+
         cursor.execute(
             '''INSERT INTO history (domain, address, ping)\
             VALUES (?, ?, ?)''', (host, address, ping))

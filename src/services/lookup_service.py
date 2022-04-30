@@ -5,6 +5,7 @@ from uuid import getnode
 from urllib.request import urlopen
 from urllib.error import URLError
 import validators
+
 from repositories.history_repository import(
     history_repository as default_history_repository)
 
@@ -116,3 +117,6 @@ class NetworkLookup:
 
     def fetch_history(self):
         return self._history_repository.fetch_all()
+
+    def clear_history(self):
+        self._history_repository.clear_all()

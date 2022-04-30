@@ -20,7 +20,7 @@ class LookupView:
         output_value = NetworkLookup.domain_lookup(self, entry_value)
 
         self._label_domain_button.config(text=output_value,
-                                         font=("Arial", "11"))
+                                         font=("Arial", "10"))
         self._label_domain_button.grid(
             sticky="NW", row=4, column=0, padx=3, pady=3)
 
@@ -55,7 +55,8 @@ class LookupView:
 
         main_view_button.grid(sticky="NW", row=0, column=0)
 
-        self._label_heading.grid(sticky="W", row=1, column=0, padx=5, pady=7)
+        self._label_heading.grid(sticky="W", row=1, column=0, 
+                            padx=5, pady=7)
 
         self.domain_name_entry.grid(sticky="NW", row=2, column=0,
                                     padx=5, pady=3, ipadx=20, ipady=2)

@@ -5,9 +5,14 @@ from uuid import getnode
 from urllib.request import urlopen
 from urllib.error import URLError
 import validators
+from repositories.history_repository import(
+    history_repository as default_history_repository)
 
 
 class NetworkLookup:
+    def __init__(self, history_repository = default_history_repository):
+        self._history_repository = history_repository
+
     def domain_lookup(self, host):
         if [validators.domain(host), validators.ipv4(host),
                 validators.ipv6(host)].count(True) == 0:
@@ -15,11 +20,21 @@ class NetworkLookup:
 
         try:
             if validators.domain(host):
-                return f"Domain is taken (IPv4: {socket.gethostbyname(host)})"\
-                       f"\n{NetworkLookup._domain_ping(host)}"
+                address = str(socket.gethostbyname(host))
+                ping = str(NetworkLookup._domain_ping(host))
 
-            return f"Domain is taken (FQDN: {socket.gethostbyaddr(host)[0]})"\
-                   f"\n{NetworkLookup._domain_ping(host)}"
+                self._history_repository.insert(host, address, ping)
+
+                return f"Domain is taken (IPv4: {address})"\
+                       f"\n{ping}"
+
+            address = str(socket.gethostbyaddr(host)[0])
+            ping = str(NetworkLookup._domain_ping(host))
+
+            self._history_repository.insert(host, address, ping)
+
+            return f"Domain is taken (FQDN: {address})"\
+                   f"\n{ping}"
 
         except socket.gaierror:
             return "Domain is available!"
@@ -66,6 +81,7 @@ class NetworkLookup:
         if public_ip == "127.0.0.1" or [validators.ipv6(public_ip),
            validators.ipv4(public_ip)].count(True) == 0:
             return "Failed to fetch public IP address"
+
         if validators.ipv4(public_ip) is True:
             return f"Public IP: {public_ip} (IPv4)"
         return f"Public IP: {public_ip} (IPv6)"
@@ -97,3 +113,6 @@ class NetworkLookup:
         elif second_least_significant_bit == "1":
             mac_type = "LAA"
         return f"MAC: {formatted_mac} ({mac_type})"
+
+    def fetch_history(self):
+        return self._history_repository.fetch_all()

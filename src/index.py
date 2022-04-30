@@ -1,6 +1,6 @@
 from tkinter import Tk
-from ui.ui import UI
 from platform import system as platform_os
+from ui.ui import UI
 
 
 def main():

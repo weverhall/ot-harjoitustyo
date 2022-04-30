@@ -28,19 +28,19 @@ class MainView:
         self._label_own_public_ip = ttk.Label(
             master=self._frame,
             text=NetworkLookup.find_own_public_ip(self),
-            font=("Arial", "11"),
+            font=("Arial", "10"),
             foreground="blue")
 
         self._label_local_ip = ttk.Label(
             master=self._frame,
             text=NetworkLookup.find_local_ip(self),
-            font=("Arial", "11"),
+            font=("Arial", "10"),
             foreground="blue")
 
         self._label_mac = ttk.Label(
             master=self._frame,
             text=NetworkLookup.find_mac(self),
-            font=("Arial", "11"),
+            font=("Arial", "10"),
             foreground="blue")
 
         self.lookup_view_button = ttk.Button(

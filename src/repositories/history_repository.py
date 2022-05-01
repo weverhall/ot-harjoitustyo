@@ -8,11 +8,15 @@ class HistoryRepository:
     def fetch_all(self):
         cursor = self._connection.cursor()
 
-        cursor.execute('SELECT * FROM history')
+        cursor.execute('SELECT host, address, ping, search_date FROM history\
+                        ORDER BY search_date DESC\
+                        LIMIT 200')
 
         rows = cursor.fetchall()
 
-        return rows
+        results = [list(row) for row in rows]
+
+        return results
 
     def clear_all(self):
         cursor = self._connection.cursor()
@@ -24,10 +28,13 @@ class HistoryRepository:
     def insert(self, host, address, ping):
         cursor = self._connection.cursor()
         
-        ping = ping[9:-3]
+        if ping[:7] != "Pinging":
+            ping = ping[9:-3]
+        else:
+            ping = "?"
 
         cursor.execute(
-            'INSERT INTO history (host, address, ping) VALUES (?, ?, ?)', 
+            'INSERT OR IGNORE INTO history (host, address, ping) VALUES (?, ?, ?)', 
             (host, address, ping))
 
         self._connection.commit()

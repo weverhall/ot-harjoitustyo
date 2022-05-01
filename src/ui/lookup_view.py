@@ -53,16 +53,17 @@ class LookupView:
 
         main_view_button = ttk.Button(
             master=self._frame,
-            text="Return to Main Menu",
+            text="🢦",
             command=self._handle_show_main_view)
 
-        main_view_button.grid(sticky="NW", row=0, column=0)
+        main_view_button.grid(sticky="NW", row=0, column=0,
+                            padx=3, pady=3)
 
         self._label_heading.grid(sticky="W", row=1, column=0, 
-                            padx=5, pady=7)
+                            padx=3, pady=7)
 
         self.domain_name_entry.grid(sticky="NW", row=2, column=0,
-                                    padx=5, pady=3, ipadx=20, ipady=2)
+                                    padx=3, pady=3, ipadx=20, ipady=2)
 
         domain_check_button.grid(sticky="NW", row=3, column=0,
-                                 padx=5, pady=3, ipadx=7, ipady=2)
+                                 padx=3, pady=3, ipadx=7, ipady=2)

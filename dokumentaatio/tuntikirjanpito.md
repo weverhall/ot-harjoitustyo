@@ -1,6 +1,6 @@
 # Työaikakirjanpito
 
-| päivä | aika | mitä tein  |
+| pvm | tunnit | mitä tein |
 | :----:|:-----| :-----|
 | 29.3. |   1  | vaatimusmäärittelyn laadinta |
 |  4.4  |   5  | matskujen tarkempi tutkinta ja suunnittelua |
@@ -19,4 +19,6 @@
 | 27.4  |   1  | päivitetty dokumentaatiota |
 | 28.4  |   5  | tehty laajempi käyttöliittymä ja eriytetty luokkia edelleen |
 | 29.4  |   3  | paranneltu käyttöliittymää, ajettu pep8, aloitettu tietokannan toteutus |
-|  yht. | =86  |
+|  1.5  |   3  | tietokantatoiminnallisuuden toteutusta
+|       |      |
+|  yht. | =89  |

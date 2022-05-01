@@ -8,7 +8,7 @@ from repositories.history_repository import(
 
 class HistoryView:
     def __init__(self, root, handle_show_main_view,
-                history_repository = default_history_repository):
+                 history_repository=default_history_repository):
         self._root = root
         self._frame = None
         self._history_repository = history_repository
@@ -23,24 +23,33 @@ class HistoryView:
 
     def _display_history_table(self):
         columns = ("Domain", "IP/FQDN", "Ping", "Date")
-        tree = ttk.Treeview(master=self._frame, columns=columns, show="headings")
+        tree = ttk.Treeview(master=self._frame,
+                            columns=columns, show="headings")
         tree.heading("Domain", text="Domain")
         tree.heading("IP/FQDN", text="IP/FQDN")
         tree.heading("Ping", text="Ping")
         tree.heading("Date", text="Date")
+        tree.column("Domain", minwidth=0, width=250)
+        tree.column("IP/FQDN", minwidth=0, width=250)
+        tree.column("Ping", minwidth=0, width=80)
+        tree.column("Date", minwidth=0, width=80)
 
         rows = NetworkLookup.fetch_history(self)
         for row in rows:
-            tree.insert("", tkinter.END, values=row)
+            tree.insert("", tkinter.END, 
+            values=(row[0], row[1], row[2], row[3]))
 
-        scrollbar = ttk.Scrollbar(master=self._frame,\
-                                  orient=tkinter.VERTICAL,\
+        scrollbar = ttk.Scrollbar(master=self._frame,
+                                  orient=tkinter.VERTICAL,
                                   command=tree.yview)
-        
-        tree.configure(yscroll=scrollbar.set)
-        scrollbar.grid(row=2, column=1, sticky="ns")
-        tree.grid(row=2, column=0, sticky="nsew")
 
+        tree.configure(yscroll=scrollbar.set, selectmode="browse")
+        style = ttk.Style()
+        style.theme_use("default")
+        style.map("Treeview")
+
+        scrollbar.grid(row=2, column=1, sticky="NS")
+        tree.grid(row=2, column=0, sticky="NSEW")
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -58,6 +67,6 @@ class HistoryView:
             command=NetworkLookup.clear_history(self))
 
         main_view_button.grid(sticky="NW", row=0, column=0,
-                            padx=3, pady=3)
+                              padx=3, pady=3)
         delete_history_button.grid(sticky="NW", row=4, column=0,
-                                    padx=3, pady=3, ipadx=7, ipady=2)
+                                   padx=3, pady=3, ipadx=7, ipady=2)

@@ -11,7 +11,7 @@ from repositories.history_repository import(
 
 
 class NetworkLookup:
-    def __init__(self, history_repository = default_history_repository):
+    def __init__(self, history_repository=default_history_repository):
         self._history_repository = history_repository
 
     def domain_lookup(self, host):

@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect("database.py")
+connection = sqlite3.connect("database.sqlite")
 connection.row_factory = sqlite3.Row
 
 

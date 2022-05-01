@@ -1,7 +1,7 @@
 from database_connection import get_database_connection
 
 
-def create_tables(connection):
+def create_table(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -21,7 +21,7 @@ def create_tables(connection):
 def initialize_database():
     connection = get_database_connection()
 
-    create_tables(connection)
+    create_table(connection)
 
 
 if __name__ == "__main__":

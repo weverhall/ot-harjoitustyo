@@ -3,9 +3,10 @@ from services.lookup_service import NetworkLookup
 from repositories.history_repository import(
     history_repository as default_history_repository)
 
+
 class LookupView:
-    def __init__(self, root, handle_show_main_view, 
-                history_repository = default_history_repository):
+    def __init__(self, root, handle_show_main_view,
+                 history_repository=default_history_repository):
         self._root = root
         self._frame = None
         self._history_repository = history_repository
@@ -57,10 +58,10 @@ class LookupView:
             command=self._handle_show_main_view)
 
         main_view_button.grid(sticky="NW", row=0, column=0,
-                            padx=3, pady=3)
+                              padx=3, pady=3)
 
-        self._label_heading.grid(sticky="W", row=1, column=0, 
-                            padx=3, pady=7)
+        self._label_heading.grid(sticky="W", row=1, column=0,
+                                 padx=3, pady=7)
 
         self.domain_name_entry.grid(sticky="NW", row=2, column=0,
                                     padx=3, pady=3, ipadx=20, ipady=2)

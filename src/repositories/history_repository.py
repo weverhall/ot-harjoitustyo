@@ -9,8 +9,8 @@ class HistoryRepository:
         cursor = self._connection.cursor()
 
         cursor.execute('SELECT host, address, ping, search_date FROM history\
-                        ORDER BY search_date DESC\
-                        LIMIT 200')
+                        ORDER BY search_date DESC, host ASC\
+                        LIMIT 150')
 
         rows = cursor.fetchall()
 
@@ -27,16 +27,17 @@ class HistoryRepository:
 
     def insert(self, host, address, ping):
         cursor = self._connection.cursor()
-        
+
         if ping[:7] != "Pinging":
             ping = ping[9:-3]
         else:
             ping = "?"
 
         cursor.execute(
-            'INSERT OR IGNORE INTO history (host, address, ping) VALUES (?, ?, ?)', 
+            'INSERT OR IGNORE INTO history (host, address, ping) VALUES (?, ?, ?)',
             (host, address, ping))
 
         self._connection.commit()
+
 
 history_repository = HistoryRepository(get_database_connection())

@@ -61,6 +61,7 @@ class MainView:
         self.history_view_button.grid(sticky="NE", row=1, column=0,
                                       padx=3, pady=10, ipadx=7, ipady=2)
 
-        self._label_own_public_ip.grid(sticky="W", row=4, column=0, padx=3, pady=1)
+        self._label_own_public_ip.grid(
+            sticky="W", row=4, column=0, padx=3, pady=1)
         self._label_local_ip.grid(sticky="W", row=5, column=0, padx=3, pady=1)
         self._label_mac.grid(sticky="W", row=6, column=0, padx=3, pady=1)

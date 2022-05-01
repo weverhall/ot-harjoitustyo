@@ -1,7 +1,6 @@
 from tkinter import ttk
 import tkinter
 from services.lookup_service import NetworkLookup
-
 from repositories.history_repository import(
     history_repository as default_history_repository)
 
@@ -29,21 +28,32 @@ class HistoryView:
         tree.heading("IP/FQDN", text="IP/FQDN")
         tree.heading("Ping", text="Ping")
         tree.heading("Date", text="Date")
-        tree.column("Domain", minwidth=0, width=250)
-        tree.column("IP/FQDN", minwidth=0, width=250)
-        tree.column("Ping", minwidth=0, width=80)
-        tree.column("Date", minwidth=0, width=80)
+        tree.column("Domain", minwidth=80, width=250)
+        tree.column("IP/FQDN", minwidth=80, width=250)
+        tree.column("Ping", minwidth=80, width=80)
+        tree.column("Date", minwidth=80, width=80)
+
 
         rows = NetworkLookup.fetch_history(self)
+        count = 0
         for row in rows:
-            tree.insert("", tkinter.END, 
-            values=(row[0], row[1], row[2], row[3]))
+            if count % 2 == 0:
+                tree.insert("", tkinter.END, 
+                values=(row[0], row[1], row[2], row[3]),
+                tags="even_row")
+            else:
+                tree.insert("", tkinter.END, 
+                values=(row[0], row[1], row[2], row[3]),
+                tags="odd_row")
+            count += 1
 
         scrollbar = ttk.Scrollbar(master=self._frame,
                                   orient=tkinter.VERTICAL,
                                   command=tree.yview)
 
         tree.configure(yscroll=scrollbar.set, selectmode="browse")
+        tree.tag_configure("odd_row", background="white")
+        tree.tag_configure("even_row", background="aliceblue")
         style = ttk.Style()
         style.theme_use("default")
         style.map("Treeview")

@@ -18,7 +18,7 @@ def create_tables(connection):
         CREATE TABLE IF NOT EXISTS history (
             id INTEGER PRIMARY KEY NOT NULL,
             host TEXT,
-            ip_fqdn TEXT,
+            address TEXT,
             ping TEXT,
             search_date DATE DEFAULT CURRENT_DATE,
             UNIQUE(host, search_date)

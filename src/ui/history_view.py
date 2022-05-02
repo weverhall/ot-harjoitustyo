@@ -9,6 +9,7 @@ class HistoryView:
     def __init__(self, root, handle_show_main_view,
                  history_repository=default_history_repository):
         self._root = root
+        self.network_lookup = NetworkLookup()
         self._history_repository = history_repository
         self._handle_show_main_view = handle_show_main_view
         self._frame = None
@@ -76,7 +77,7 @@ class HistoryView:
         delete_history_button = ttk.Button(
             master=self._frame,
             text="Clear History",
-            command=NetworkLookup.clear_history(self))
+            command=self.network_lookup.clear_history)
 
         main_view_button.grid(sticky="NW", row=0, column=0,
                               padx=3, pady=3)

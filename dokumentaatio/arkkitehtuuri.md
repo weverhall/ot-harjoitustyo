@@ -1,10 +1,12 @@
-### Pakkauskaavio
+# Arkkitehtuurikuvaus
+
+## Sovelluksen rakenne
 
 Yleiskatsaus sovelluksen kolmitasoisesta kerrosarkkitehtuurista:
 
 ![Pakkauskaavio](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/pakkauskaavio.png "Pakkauskaavio")
 
-Pakkaus "ui" sisältää käyttöliittymä-, "services" sovelluslogiikka- ja "repositories" tietokantakoodin.
+UI-pakkauksessa on käyttöliittymän, Services-pakkauksessa sovelluslogiikan ja Repositories-pakkauksessa tietokannan koodi.
 
 ### Sovelluslogiikka
 
@@ -29,9 +31,20 @@ Hakuhistoria voidaan noutaa taulukkoon ja poistaa tietokannasta history-metodien
 
 ### Tietokantatoiminnot
 
+```mermaid
+classDiagram
+    class HistoryRepository{   
+        +fetch_all()
+        +clear_all()
+        +insert(host, address, ping)
+    }
+```
+
 Pysyväistallennus on HistoryRepository-luokan vastuulla. Sovelluslogiikan NetworkLookup-luokka kutsuu HistoryRepository-luokan insert-metodia aina kun käyttäjä on hakenut varatun domainin. Näin se saadaan tallennetuksi initialize_database-tiedostossa alustettuun history-tietokantaan.
 
 Historia voidaan poistaa käyttöliittymän napilla, joka kutsuu NetworkLookup-luokkaa, joka edelleen kutsuu HistoryRepository-luokan clear_all-metodia.
+
+## Sovelluksen toimintalogiikka
 
 ### Domainhaku ja historian tallennus
 

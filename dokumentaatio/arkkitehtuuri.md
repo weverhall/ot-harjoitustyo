@@ -1,6 +1,6 @@
 # Arkkitehtuurikuvaus
 
-## Sovelluksen rakenne
+## Rakenne
 
 Yleiskatsaus sovelluksen kolmitasoisesta kerrosarkkitehtuurista:
 
@@ -44,9 +44,9 @@ Pysyväistallennus on HistoryRepository-luokan vastuulla. Sovelluslogiikan Netwo
 
 Historia voidaan poistaa käyttöliittymän napilla, joka kutsuu NetworkLookup-luokkaa, joka edelleen kutsuu HistoryRepository-luokan clear_all-metodia.
 
-## Sovelluksen toimintalogiikka
+## Toimintalogiikka
 
-### Domainhaku ja historian tallennus
+### Domainhaku ja historian tallennus:
 
 ```mermaid
 sequenceDiagram
@@ -60,7 +60,7 @@ sequenceDiagram
     NetworkLookup->>HistoryRepository: insert("mooc.fi", "35.228.16.220", "5")
 ```
 
-### Historian poisto
+### Historian poisto:
 
 ```mermaid
 sequenceDiagram

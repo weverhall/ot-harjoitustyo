@@ -8,9 +8,9 @@ class LookupView:
     def __init__(self, root, handle_show_main_view,
                  history_repository=default_history_repository):
         self._root = root
-        self._frame = None
         self._history_repository = history_repository
         self._handle_show_main_view = handle_show_main_view
+        self._frame = None
         self._initialize()
 
     def grid(self):

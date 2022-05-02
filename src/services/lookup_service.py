@@ -46,11 +46,10 @@ class NetworkLookup:
         try:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
-                pinging = subprocess.Popen(
-                    (popen_args), stdout=subprocess.PIPE)
+                pinging = subprocess.Popen((popen_args), stdout=subprocess.PIPE)
                 output = str(pinging.communicate(timeout=0.85)[0])
                 pinging.terminate()
-                if "Destination port unreachable" in output or "100%" in output:
+                if "unreachable" in output or "100%" in output:
                     return "Pinging process failed (destination port unreachable)"
                 parsed_output = output.split("Minimum = ", 1)[1]
                 return f'Latency: {parsed_output.split("ms", 1)[0]} ms'
@@ -59,7 +58,7 @@ class NetworkLookup:
             pinging = subprocess.Popen((popen_args), stdout=subprocess.PIPE)
             output = str(pinging.communicate(timeout=0.85)[0])
             pinging.terminate()
-            if "Destination port unreachable" in output or "100%" in output:
+            if "unreachable" in output or "100%" in output:
                 return "Pinging process failed (destination port unreachable)"
             parsed_output = output.split("mdev = ", 1)[1]
             return f'Latency: {parsed_output.split("/", 3)[1]} ms'

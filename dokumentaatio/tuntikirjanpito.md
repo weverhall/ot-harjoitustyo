@@ -19,6 +19,6 @@
 | 27.4  |   1  | päivitetty dokumentaatiota |
 | 28.4  |   5  | tehty laajempi käyttöliittymä ja eriytetty luokkia edelleen |
 | 29.4  |   3  | paranneltu käyttöliittymää, ajettu pep8, aloitettu tietokannan toteutus |
-|  1.5  |   3  | tietokantatoiminnallisuuden toteutusta
-|       |      |
-|  yht. | =89  |
+|  1.5  |   3  | tietokantatoiminnallisuuden toteutusta |
+|  2.5  |   2  | tietokanta saatu toimimaan, päivitetty arkkitehtuurikuvaus |
+|  yht. | =91  |

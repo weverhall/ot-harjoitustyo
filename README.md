@@ -5,6 +5,7 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - Verkkotunnusten saatavuushaku IP-osoitteen tai domainnimen perusteella
   - Varatun domainin IP:n tai FQDN:n nouto riippuen haun tyypistä
   - Latenssin mittaus
+  - Hakuhistorian tallennus ja poisto
 - Oman yksityisen ja julkisen IP:n nouto
   - IPv4- ja IPv6-osoitetyypin tarkastus
 - Oman MAC-osoitteen nouto
@@ -29,10 +30,11 @@ Siirry vielä komentorivillä "ot-harjoitustyo" kansioon, niin olet valmis suori
 
 ## Käynnistys
 
-Asenna riippuvuudet ja käynnistä sovellus:
+Asenna riippuvuudet, alusta tietokanta ja käynnistä sovellus:
 
 ```bash
 poetry install
+poetry run invoke build
 poetry run invoke start
 ```
 

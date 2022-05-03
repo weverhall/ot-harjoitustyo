@@ -67,7 +67,7 @@ class HistoryView:
                                   orient=tkinter.VERTICAL,
                                   command=tree.yview)
 
-        tree.configure(yscroll=scrollbar.set, selectmode="browse")
+        tree.configure(yscroll=scrollbar.set)
         tree.tag_configure("even_row", background="white")
         tree.tag_configure("odd_row", background="aliceblue")
         

@@ -25,8 +25,7 @@ Päävalikossa käyttäjä näkee MAC- ja IP-osoitteensa. Tästä valikosta pä�
 
 - :heavy_check_mark: Verkkotunnusten saatavuuden haku myös IP:n perustella
   - :heavy_check_mark: Varatun verkkotunnuksen FQDN:n nouto
-- Verkkotunnusten saatavuustietojen tallennus tietokantaan
+- :heavy_check_mark: Varatun verkkotunnuksen tietojen pysyväistallennus
 - :heavy_check_mark: Verkkotunnusten pingaustoiminto
-- Latenssitietojen tallennus tietokantaan
 - Käyttäjän omien osoitteiden tallennus myöhemmäksi
 - Muuta tietoverkkoihin liittyvää toiminnallisuutta

@@ -15,12 +15,13 @@ Ohjelma toimii yleisimmillä Linux, macOS ja Windows versioilla, joskin käyttö
 
 ## Dokumentaatio
 
-- [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
+- [Käyttöohje](./dokumentaatio/kayttoohje.md)
 - [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
+- [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 
-## Alustus ja GitHub release
+## Valmistelut
 
 - [Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download), että Python-versiosi on 3.8 tai uudempi
 - [Asenna](https://python-poetry.org/docs/#installation) Poetry koneellesi

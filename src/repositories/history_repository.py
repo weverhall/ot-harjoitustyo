@@ -2,10 +2,22 @@ from database_connection import get_database_connection
 
 
 class HistoryRepository:
+    """Repository class that's responsible for database functionality
+
+    Attributes:
+        connection: database_connection method for acquiring database connection
+     """
+
     def __init__(self, connection):
         self._connection = connection
 
     def fetch_all(self):
+        """Fetches and sorts all data from database
+
+        Returns:
+            List-type object of fetched data
+        """
+
         cursor = self._connection.cursor()
 
         cursor.execute('SELECT host, address, ping, search_date FROM history\
@@ -19,6 +31,8 @@ class HistoryRepository:
         return results
 
     def clear_all(self):
+        """Removes all data from database"""
+
         cursor = self._connection.cursor()
 
         cursor.execute('DELETE FROM history')
@@ -26,6 +40,14 @@ class HistoryRepository:
         self._connection.commit()
 
     def insert(self, host, address, ping):
+        """Inserts output from NetworkLookup class to database
+
+        Args:
+            host (str): Domain search parameter
+            address (str): Domain's address
+            ping (str): Domain's ping
+        """
+
         cursor = self._connection.cursor()
 
         if ping[:7] != "Pinging":

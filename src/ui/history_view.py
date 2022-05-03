@@ -6,22 +6,36 @@ from repositories.history_repository import(
 
 
 class HistoryView:
+    """User interface class that's responsible for the history view
+
+    Attributes:
+        root: Parent element
+        handle_show_main_view: UI-class method that replaces current view with the main view
+        history_repository: HistoryRepository class object for treeview
+    """
+
     def __init__(self, root, handle_show_main_view,
                  history_repository=default_history_repository):
         self._root = root
         self._network_lookup = NetworkLookup()
-        self._history_repository = history_repository
         self._handle_show_main_view = handle_show_main_view
+        self._history_repository = history_repository
         self._frame = None
         self._initialize()
 
     def grid(self):
+        """Grids UI-elements to frame"""
+
         self._frame.grid()
 
     def destroy(self):
+        """Removes current view"""
+
         self._frame.destroy()
 
     def _display_history_table(self):
+        """Renders treeview widget to frame"""      
+
         columns = ("Domain", "IP/FQDN", "Ping", "Date")
         tree = ttk.Treeview(master=self._frame,
                             columns=columns, 
@@ -65,6 +79,8 @@ class HistoryView:
         tree.grid(row=2, column=0, sticky="NSEW")
 
     def _initialize(self):
+        """Initializes current view"""
+
         self._frame = ttk.Frame(master=self._root)
 
         self._display_history_table()

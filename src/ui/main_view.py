@@ -3,6 +3,14 @@ from services.lookup_service import NetworkLookup
 
 
 class MainView:
+    """User interface class that's responsible for the main view
+
+    Attributes:
+        root: Parent element
+        handle_show_lookup_view: UI-class method that replaces current view with the lookup view
+        handle_show_history_view: UI-class method that replaces current view with the history view
+    """
+
     def __init__(self, root, handle_show_lookup_view, handle_show_history_view):
         self._root = root
         self._handle_show_lookup_view = handle_show_lookup_view
@@ -11,12 +19,18 @@ class MainView:
         self._initialize()
 
     def grid(self):
+        """Grids UI-elements to frame"""
+
         self._frame.grid()
 
     def destroy(self):
+        """Removes current view"""
+
         self._frame.destroy()
 
     def _initialize(self):
+        """Initializes current view"""
+
         self._frame = ttk.Frame(master=self._root)
 
         self._label_heading = ttk.Label(

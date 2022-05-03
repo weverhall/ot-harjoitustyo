@@ -20,5 +20,6 @@
 | 28.4  |   5  | tehty laajempi käyttöliittymä ja eriytetty luokkia edelleen |
 | 29.4  |   3  | paranneltu käyttöliittymää, ajettu pep8, aloitettu tietokannan toteutus |
 |  1.5  |   3  | tietokantatoiminnallisuuden toteutusta |
-|  2.5  |   2  | tietokanta saatu toimimaan, päivitetty arkkitehtuurikuvaus |
+|  2.5  |   2  | tietokanta saatu toimimaan treeview'ssä, päivitetty arkkitehtuurikuvaus |
+|  3.5  |      |      |
 |  yht. | =91  |

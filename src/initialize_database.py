@@ -2,6 +2,12 @@ from database_connection import get_database_connection
 
 
 def create_table(connection):
+    """Creates database table
+
+    Args:
+        connection: database_connection method for acquiring database connection
+    """
+
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -19,6 +25,8 @@ def create_table(connection):
 
 
 def initialize_database():
+    """Initializes database table"""
+
     connection = get_database_connection()
 
     create_table(connection)

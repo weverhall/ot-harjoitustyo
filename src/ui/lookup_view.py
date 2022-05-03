@@ -5,21 +5,35 @@ from repositories.history_repository import(
 
 
 class LookupView:
+    """User interface class that's responsible for the lookup view
+
+    Attributes:
+        root: Parent element
+        handle_show_main_view: UI-class method that replaces current view with the main view
+        history_repository: HistoryRepository class object for using domain lookup
+    """
+
     def __init__(self, root, handle_show_main_view,
                  history_repository=default_history_repository):
         self._root = root
-        self._history_repository = history_repository
         self._handle_show_main_view = handle_show_main_view
+        self._history_repository = history_repository
         self._frame = None
         self._initialize()
 
     def grid(self):
+        """Grids UI-elements to frame"""
+
         self._frame.grid()
 
     def destroy(self):
+        """Removes current view"""
+
         self._frame.destroy()
 
     def _handle_domain_button_click(self):
+        """Method that's responsible for Fetch Data button's functionality"""
+
         entry_value = self.domain_name_entry.get()
         output_value = NetworkLookup.domain_lookup(self, entry_value)
 
@@ -36,6 +50,8 @@ class LookupView:
             self._label_domain_button.configure(foreground="red")
 
     def _initialize(self):
+        """Initializes current view"""
+
         self._frame = ttk.Frame(master=self._root)
 
         self.domain_name_entry = ttk.Entry(master=self._frame)

@@ -11,7 +11,7 @@ from repositories.history_repository import(
 
 
 class NetworkLookup:
-    """Services class that's responsible for application logic
+    """Service class responsible for application logic
 
     Attributes:
         history_repository: HistoryRepository class object for database communication

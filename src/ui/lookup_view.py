@@ -5,7 +5,7 @@ from repositories.history_repository import(
 
 
 class LookupView:
-    """User interface class that's responsible for the lookup view
+    """User interface class responsible for the lookup view
 
     Attributes:
         root: Parent element

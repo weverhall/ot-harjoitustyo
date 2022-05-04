@@ -2,7 +2,7 @@ from database_connection import get_database_connection
 
 
 class HistoryRepository:
-    """Repository class that's responsible for database functionality
+    """Repository class responsible for database functionality
 
     Attributes:
         connection: database_connection method for acquiring database connection

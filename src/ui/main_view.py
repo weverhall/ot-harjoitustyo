@@ -3,7 +3,7 @@ from services.lookup_service import NetworkLookup
 
 
 class MainView:
-    """User interface class that's responsible for the main view
+    """User interface class responsible for the main view
 
     Attributes:
         root: Parent element

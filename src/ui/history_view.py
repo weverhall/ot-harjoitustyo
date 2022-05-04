@@ -6,7 +6,7 @@ from repositories.history_repository import(
 
 
 class HistoryView:
-    """User interface class that's responsible for the history view
+    """User interface class responsible for the history view
 
     Attributes:
         root: Parent element

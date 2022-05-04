@@ -21,8 +21,7 @@ class HistoryRepository:
         cursor = self._connection.cursor()
 
         cursor.execute('SELECT host, address, ping, search_date FROM history\
-                        ORDER BY search_date DESC, host ASC\
-                        LIMIT 150')
+                        ORDER BY search_date DESC, host ASC')
 
         rows = cursor.fetchall()
 

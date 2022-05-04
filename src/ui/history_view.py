@@ -44,8 +44,8 @@ class HistoryView:
         tree.heading("IP/FQDN", text="IP/FQDN")
         tree.heading("Ping", text="Ping")
         tree.heading("Date", text="Date")
-        tree.column("Domain", minwidth=85, width=250)
-        tree.column("IP/FQDN", minwidth=85, width=250)
+        tree.column("Domain", minwidth=85, width=275)
+        tree.column("IP/FQDN", minwidth=85, width=275)
         tree.column("Ping", minwidth=85, width=85)
         tree.column("Date", minwidth=85, width=85)
 
@@ -67,7 +67,7 @@ class HistoryView:
                                   orient=tkinter.VERTICAL,
                                   command=tree.yview)
 
-        tree.configure(yscroll=scrollbar.set)
+        tree.configure(yscroll=scrollbar.set, height=15)
         tree.tag_configure("even_row", background="white")
         tree.tag_configure("odd_row", background="aliceblue")
         

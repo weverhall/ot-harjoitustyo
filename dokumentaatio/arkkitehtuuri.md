@@ -57,7 +57,7 @@ sequenceDiagram
     User->>LookupView: click enter after typing in name or ip
     LookupView->>NetworkLookup: domain_lookup("mooc.fi")
     NetworkLookup-->>LookupView: domain data
-    NetworkLookup->>HistoryRepository: insert("mooc.fi", "35.228.16.220", "5")
+    NetworkLookup->>HistoryRepository: insert("mooc.fi", "35.228.16.220", "18.246")
 ```
 
 ### Historian poisto:

@@ -4,7 +4,7 @@ from ui.history_view import HistoryView
 
 
 class UI:
-    """User interface class that's responsible for managing views
+    """User interface class that's responsible for managing windows
 
     Attributes:
         root: Parent element

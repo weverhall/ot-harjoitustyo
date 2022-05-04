@@ -11,10 +11,34 @@ from repositories.history_repository import(
 
 
 class NetworkLookup:
+    """Services class that's responsible for application logic
+
+    Attributes:
+        history_repository: HistoryRepository class object for database communication
+    """
+
     def __init__(self, history_repository=default_history_repository):
         self._history_repository = history_repository
 
     def domain_lookup(self, host):
+        """Checks IP and name validity with validators library
+
+           Queries socket and analyses output to determine domain availability and address
+
+           Pinging domain for latency data is the responsibility of
+           protected subfunction _domain_ping
+
+           Note that Pylint recommends using with statement in _domain_ping,
+           however testing this showed that pinging becomes more than several times
+           slower compared to when using Popen and terminate
+
+        Args:
+            host (str): Domain name or IP that the user wants to get data of
+
+        Returns:
+            String-type error message and/or domain data
+        """
+
         if [validators.domain(host), validators.ipv4(host),
                 validators.ipv6(host)].count(True) == 0:
             return "Invalid domain name or IP"
@@ -68,6 +92,13 @@ class NetworkLookup:
             return "Pinging process timed out (severe latency or packet loss)"
 
     def find_own_public_ip(self):
+        """Finds user's public IP address by reading a string from one of two websites
+           and uses validators library to resolve address type
+
+        Returns:
+            String-type error message or user's public IP address and its type
+        """
+
         try:
             with urlopen("https://checkip.amazonaws.com/") as response:
                 public_ip = str(response.read())[2:-3]
@@ -87,6 +118,13 @@ class NetworkLookup:
         return f"Public IP: {public_ip} (IPv6)"
 
     def find_local_ip(self):
+        """Finds user's local IP address by querying own network socket
+           and uses validators library to resolve address type
+
+        Returns:
+            String-type error message or user's local IP address and its type
+        """
+
         try:
             own_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             own_socket.connect(("10.255.255.255", 1))
@@ -100,6 +138,19 @@ class NetworkLookup:
         return f"Local IP: {local_ip} (IPv4)"
 
     def find_mac(self):
+        """Finds user's MAC-address by fetching data from network interface
+           and parses it to standard format
+
+           Determines address type by checking value of
+           second least significant bit of most significant byte
+
+           More distinguishable UAA-type address preferred if
+           both types of addresses are found
+
+        Returns:
+            String-type error message or user's MAC-address and its type
+        """
+
         formatted_mac = "".join(c + ":" if i % 2 else c for i,
                                 c in enumerate(hex(getnode())[2:].zfill(12)))[:-1]
 
@@ -115,7 +166,15 @@ class NetworkLookup:
         return f"MAC: {formatted_mac} ({mac_type})"
 
     def fetch_history(self):
+        """Fetches and sorts all data from database by using HistoryRepository class object
+
+        Returns:
+            List-type object of fetched data
+        """
+
         return self._history_repository.fetch_all()
 
     def clear_history(self):
+        """Removes all data from database by using HistoryRepository class object"""
+
         self._history_repository.clear_all()

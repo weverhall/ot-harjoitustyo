@@ -11,7 +11,7 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 - Oman MAC-osoitteen nouto
   - UAA- ja LAA-osoitetyypin tarkastus
 
-Ohjelma toimii yleisimmillä Linux, macOS ja Windows versioilla, joskin käyttöliittymän Tkinter komponentit ovat parhaimmillaan Linuxilla.
+Ohjelma toimii yleisimmillä Linux, macOS ja Windows versioilla.
 
 ## Dokumentaatio
 
@@ -25,7 +25,7 @@ Ohjelma toimii yleisimmillä Linux, macOS ja Windows versioilla, joskin käyttö
 
 - [Tarkista](https://wiki.python.org/moin/BeginnersGuide/Download), että Python-versiosi on 3.8 tai uudempi
 - [Asenna](https://python-poetry.org/docs/#installation) Poetry koneellesi
-- [Lataa](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko6) ja pura sovelluksen viimeisin GitHub release
+- [Lataa](https://github.com/weverhall/ot-harjoitustyo/releases/tag/viikko6) ja pura sovelluksen viimeisin GitHub-julkaisu
 
 Siirry vielä komentorivillä "ot-harjoitustyo" kansioon, niin olet valmis suorittamaan Poetry-komentoja.
 

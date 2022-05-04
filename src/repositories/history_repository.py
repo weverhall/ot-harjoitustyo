@@ -6,7 +6,7 @@ class HistoryRepository:
 
     Attributes:
         connection: database_connection method for acquiring database connection
-     """
+    """
 
     def __init__(self, connection):
         self._connection = connection

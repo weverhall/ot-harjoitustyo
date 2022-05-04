@@ -8,7 +8,7 @@ Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja.
 
 ### Käyttäjät
 
-Sovelluksella on vain yhdenlaisia käyttäjiä, eli kirjautumista ei vaadita. 
+Sovelluksella on vain yhdenlaisia käyttäjiä, kirjautumista ei vaadita.
 
 ### Käyttöliittymä
 
@@ -27,5 +27,3 @@ Päävalikossa käyttäjä näkee MAC- ja IP-osoitteensa. Tästä valikosta pä�
   - :heavy_check_mark: Varatun verkkotunnuksen FQDN:n nouto
 - :heavy_check_mark: Varatun verkkotunnuksen tietojen pysyväistallennus
 - :heavy_check_mark: Verkkotunnusten pingaustoiminto
-- Käyttäjän omien osoitteiden tallennus myöhemmäksi
-- Muuta tietoverkkoihin liittyvää toiminnallisuutta

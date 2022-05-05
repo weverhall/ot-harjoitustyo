@@ -54,10 +54,10 @@ sequenceDiagram
     participant LookupView
     participant NetworkLookup
     participant HistoryRepository
-    User->>LookupView: click enter after typing in name or ip
+    User->>LookupView: click enter after typing in name or address
     LookupView->>NetworkLookup: domain_lookup("mooc.fi")
     NetworkLookup-->>LookupView: domain data
-    NetworkLookup->>HistoryRepository: insert("mooc.fi", "35.228.16.220", "18.246")
+    NetworkLookup->>HistoryRepository: insert("mooc.fi", "35.228.16.220", "Latency: 18.246 ms")
 ```
 
 ### Historian poisto:

@@ -1,7 +1,5 @@
 from tkinter import ttk
 from services.lookup_service import NetworkLookup
-from repositories.history_repository import(
-    history_repository as default_history_repository)
 
 
 class LookupView:
@@ -9,15 +7,14 @@ class LookupView:
 
     Attributes:
         root: Parent element
+        network_lookup: NetworkLookup class object
         handle_show_main_view: UI-class method that replaces current view with the main view
-        history_repository: HistoryRepository class object for using domain lookup
     """
 
-    def __init__(self, root, handle_show_main_view,
-                 history_repository=default_history_repository):
+    def __init__(self, root, handle_show_main_view):
         self._root = root
+        self._network_lookup = NetworkLookup()
         self._handle_show_main_view = handle_show_main_view
-        self._history_repository = history_repository
         self._frame = None
         self._initialize()
 
@@ -32,10 +29,10 @@ class LookupView:
         self._frame.destroy()
 
     def _handle_domain_button_click(self):
-        """Method that's responsible for Fetch Data button's functionality"""
+        """Fetch Data button's functionality"""
 
         entry_value = self.domain_name_entry.get()
-        output_value = NetworkLookup.domain_lookup(self, entry_value)
+        output_value = self._network_lookup.domain_lookup(entry_value)
 
         self._label_domain_button.config(text=output_value,
                                          font=("Arial", "10"))

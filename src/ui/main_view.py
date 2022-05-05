@@ -7,12 +7,14 @@ class MainView:
 
     Attributes:
         root: Parent element
+        network_lookup: NetworkLookup class object
         handle_show_lookup_view: UI-class method that replaces current view with the lookup view
         handle_show_history_view: UI-class method that replaces current view with the history view
     """
 
     def __init__(self, root, handle_show_lookup_view, handle_show_history_view):
         self._root = root
+        self._network_lookup = NetworkLookup()
         self._handle_show_lookup_view = handle_show_lookup_view
         self._handle_show_history_view = handle_show_history_view
         self._frame = None
@@ -41,19 +43,19 @@ class MainView:
 
         self._label_own_public_ip = ttk.Label(
             master=self._frame,
-            text=NetworkLookup.find_own_public_ip(self),
+            text=self._network_lookup.find_own_public_ip(),
             font=("Arial", "10"),
             foreground="blue")
 
         self._label_local_ip = ttk.Label(
             master=self._frame,
-            text=NetworkLookup.find_local_ip(self),
+            text=self._network_lookup.find_local_ip(),
             font=("Arial", "10"),
             foreground="blue")
 
         self._label_mac = ttk.Label(
             master=self._frame,
-            text=NetworkLookup.find_mac(self),
+            text=self._network_lookup.find_mac(),
             font=("Arial", "10"),
             foreground="blue")
 

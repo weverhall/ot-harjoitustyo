@@ -1,8 +1,6 @@
 from tkinter import ttk
 import tkinter
 from services.lookup_service import NetworkLookup
-from repositories.history_repository import(
-    history_repository as default_history_repository)
 
 
 class HistoryView:
@@ -10,16 +8,14 @@ class HistoryView:
 
     Attributes:
         root: Parent element
+        network_lookup: NetworkLookup class object
         handle_show_main_view: UI-class method that replaces current view with the main view
-        history_repository: HistoryRepository class object for treeview
     """
 
-    def __init__(self, root, handle_show_main_view,
-                 history_repository=default_history_repository):
+    def __init__(self, root, handle_show_main_view):
         self._root = root
         self._network_lookup = NetworkLookup()
         self._handle_show_main_view = handle_show_main_view
-        self._history_repository = history_repository
         self._frame = None
         self._initialize()
 
@@ -50,7 +46,7 @@ class HistoryView:
         tree.column("Date", minwidth=85, width=85)
 
 
-        rows = NetworkLookup.fetch_history(self)
+        rows = self._network_lookup.fetch_history()
         count = 0
         for row in rows:
             if count % 2 == 0:

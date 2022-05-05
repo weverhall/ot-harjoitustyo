@@ -1,3 +1,4 @@
+from platform import system as platform_os
 from database_connection import get_database_connection
 
 
@@ -43,16 +44,18 @@ class HistoryRepository:
 
         Args:
             host (str): Domain search parameter
-            address (str): Domain's address
+            address (str): Domain's address or name
             ping (str): Domain's ping
         """
 
         cursor = self._connection.cursor()
 
-        if ping[:7] != "Pinging":
-            ping = ping[9:-3]
-        else:
+        if ping[:7] == "Pinging":
             ping = "?"
+        else:
+            if platform_os().lower() == "windows":
+                ping = ping[9:-3]
+            ping = ping[9:-7]
 
         cursor.execute(
             'INSERT OR IGNORE INTO history (host, address, ping) VALUES (?, ?, ?)',

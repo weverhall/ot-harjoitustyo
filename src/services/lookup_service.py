@@ -21,7 +21,7 @@ class NetworkLookup:
         self._history_repository = history_repository
 
     def domain_lookup(self, host):
-        """Checks IP and name validity with validators library
+        """Checks name and address validity with validators library
 
            Queries socket and analyses output to determine domain availability and address
 

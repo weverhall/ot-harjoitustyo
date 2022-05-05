@@ -54,8 +54,8 @@ class HistoryRepository:
             ping = "?"
         else:
             if platform_os().lower() == "windows":
-                ping = ping[9:-3]
-            ping = ping[9:-7]
+                ping = ping[9:-3] + " ms"
+            ping = ping[9:-5] + " ms"
 
         cursor.execute(
             'INSERT OR IGNORE INTO history (host, address, ping) VALUES (?, ?, ?)',

@@ -34,4 +34,4 @@ Tiedot on järjestetty taulukossa ensisijaisesti päivämäärän mukaan ja tois
 
 Toiston estämiseksi tietokantatauluun tallennetaan uusi rivi vain, jos samannimistä domainia ei ole haettu samana päivänä. Olemassa olevalle riville päivitetään kuitenkin viimeisiksi noudettu IP/FQDN ja latenssi. 
 
-Unix-pohjaisilla käyttöjärjestelmillä yli millisekunnin latenssi näytetään taulukossa yhden desimaalin tarkkuudella ja alle millisekunnin latenssi kolmen desimaalin tarkkuudella. Windowsilla latenssi on aina (myös Domain Lookup -näkymässä) kokonaislukuna.
+Unix-pohjaisilla käyttöjärjestelmillä yli millisekunnin latenssi näytetään taulukossa yhden desimaalin tarkkuudella ja alle millisekunnin latenssi kolmen desimaalin tarkkuudella. Windowsilla latenssi on sovelluksessa aina (myös Domain Lookup -näkymässä) kokonaislukuna.

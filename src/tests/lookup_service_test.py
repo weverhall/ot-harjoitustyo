@@ -6,10 +6,8 @@ from services.lookup_service import NetworkLookup
 class TestLookupService(unittest.TestCase):
     """Domain names and IPs tested on May 6, 2022"""
 
-
     def setUp(self):
         self.lookup = NetworkLookup()
-        self.lookup.clear_history()
 
     def test_finds_available_domain(self):
         self.assertEqual(self.lookup.domain_lookup("available1w2domain3w4.org"),

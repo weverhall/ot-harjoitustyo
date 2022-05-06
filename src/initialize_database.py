@@ -30,7 +30,3 @@ def initialize_database():
     connection = get_database_connection()
 
     create_table(connection)
-
-
-if __name__ == "__main__":
-    initialize_database()

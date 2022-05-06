@@ -1,13 +1,19 @@
 import unittest
+import datetime
 import validators
 from services.lookup_service import NetworkLookup
+from repositories.history_repository import(
+    history_repository as default_history_repository)
 
 
 class TestLookupService(unittest.TestCase):
     """Domain names and IPs tested on May 6, 2022"""
 
-    def setUp(self):
+    def setUp(self, history=default_history_repository):
+        self.history = history
         self.lookup = NetworkLookup()
+        self.current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        history.clear_all()
 
     def test_finds_available_domain(self):
         self.assertEqual(self.lookup.domain_lookup("available1w2domain3w4.org"),
@@ -51,3 +57,13 @@ class TestLookupService(unittest.TestCase):
 
     def test_mac_is_valid(self):
         self.assertTrue(validators.mac_address(self.lookup.find_mac()[5:-6]))
+
+    def test_lookup_fetches_row_correctly(self):
+        self.history.insert("melkki.cs.helsinki.fi", "128.214.9.98", "Latency: 0.432 ms")
+        self.assertEqual(self.lookup.fetch_history(),\
+            [["melkki.cs.helsinki.fi", "128.214.9.98", "0.432 ms", self.current_date]])
+
+    def test_lookup_clears_table(self):
+        self.history.insert("melkki.cs.helsinki.fi", "128.214.9.98", "Latency: 0.432 ms")
+        self.lookup.clear_history()
+        self.assertEqual(self.lookup.fetch_history(), [])

@@ -41,13 +41,13 @@ poetry run invoke start
 
 ## Testaus ja Pylint
 
-Suorita testit:
+Suorita testit (huom! tyhjentää tietokannan):
 
 ```bash
 poetry run invoke test
 ```
 
-Luo testikattavuusraportti (index.html) htmlcov-kansioon:
+Luo testikattavuusraportti htmlcov-kansioon:
 
 ```bash
 poetry run invoke coverage-report

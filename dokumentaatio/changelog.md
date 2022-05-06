@@ -28,7 +28,11 @@
 ## Viikko 6
 
 - Käyttöliittymää siistitty ja laajennettu
-  - Nyt yhteensä kolme eri näkymää history_view, lookup_view ja main_view -tiedostoissa omissa luokissaan, joita hallinnoi ui-tiedoston koodi
+  - Nyt yhteensä kolme eri näkymää: MainView, LookupView ja HistoryView, joita hallinnoi UI-luokan koodi
 - Lisätty hakuhistorian tallennus
   - Tietokannat alustetaan initialize_database-tiedostossa
-  - Muu SQL-koodi löytyy history_repository-tiedostosta, koodia kutsutaan sovelluslogiikan NetworkLookup-luokasta
+  - Muu SQL-koodi löytyy HistoryRepository-luokasta, ja sen metodeja kutsutaan sovelluslogiikan NetworkLookup-luokasta
+
+## Viikko 7
+
+- Lisätty TestHistoryRepository-luokka tietokannan testejä varten

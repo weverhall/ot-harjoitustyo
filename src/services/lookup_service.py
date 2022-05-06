@@ -5,7 +5,6 @@ from uuid import getnode
 from urllib.request import urlopen
 from urllib.error import URLError
 import validators
-
 from repositories.history_repository import(
     history_repository as default_history_repository)
 

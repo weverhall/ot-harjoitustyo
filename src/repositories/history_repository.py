@@ -50,12 +50,18 @@ class HistoryRepository:
 
         cursor = self._connection.cursor()
 
+        full_ping = ping[9:]
+
         if ping[:7] == "Pinging":
             ping = "?"
         else:
             if platform_os().lower() != "windows":
                 ping = ping[9:-5] + " ms"
-                if ping[-4] == "0":
+                if ping[0] == "0":
+                    ping = full_ping
+                    if ping[-4] == "0":
+                        ping = ping[:-4] + " ms"
+                elif ping[-4] == "0":
                     ping = ping[:-5] + " ms"
             else:
                 ping = ping[9:]

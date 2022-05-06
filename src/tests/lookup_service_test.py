@@ -2,10 +2,11 @@ import unittest
 import validators
 from services.lookup_service import NetworkLookup
 
-# Domain names and IPs tested on April 24, 2022
-
 
 class TestLookupService(unittest.TestCase):
+    """Domain names and IPs tested on May 6, 2022"""
+
+
     def setUp(self):
         self.lookup = NetworkLookup()
         self.lookup.clear_history()

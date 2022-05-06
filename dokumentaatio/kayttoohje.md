@@ -18,14 +18,20 @@ poetry run invoke build
 poetry run invoke start
 ```
 
-## Navigointi ja toiminnallisuuden yksityiskohdat
+## Navigointi
 
 Aloitusnäkymässä käyttäjälle näkyy keskeisimmät verkkosovitinosoitteet sekä kaksi nappia: Domain Lookup ja Domain History.
 
 Domain Lookup -nappia painaessa siirrytään näkymään, jossa voi antaa domainin joko IP- tai nimimuotoisena. Domainin ollessa varattu, näytetään sen tietoja ja samalla tallennetaan ne automaattisesti tietokantaan. 
 
-Toiston estämiseksi tietokantatauluun tallennetaan uusi rivi vain, jos samannimistä domainia ei ole haettu samana päivänä. Olemassa olevalle riville päivitetään kuitenkin viimeisiksi noudettu IP/FQDN ja latenssi.
-
-Domain History -napilla pääsee näkemään kyseisiä taulukkotietoja (haettu domain, sen erimuotoinen osoite, latenssi ja hakupäivämäärä). Tiedot on järjestetty taulukossa ensisijaisesti päivämäärän mukaan ja toissijaisesti haetun domainin ensimmäisen aakkosen tai numeron mukaan. Näkymässä on Clear History -nappi, joka tyhjentää tietokannan.
+Domain History -napilla pääsee näkemään kyseisiä taulukkotietoja (haettu domain, sen erimuotoinen osoite, latenssi ja hakupäivämäärä). Näkymässä on Clear History -nappi, joka tyhjentää tietokannan.
 
 Molemmista näkymistä pääsee takaisin aloitusnäkymään vasemmassa ylälaidassa sijaitsevaa nuolta painamalla.
+
+## Tietokantataulukon yksityiskohdat
+
+Tiedot on järjestetty taulukossa ensisijaisesti päivämäärän mukaan ja toissijaisesti haetun domainin ensimmäisen aakkosen tai numeron mukaan.
+
+Toiston estämiseksi tietokantatauluun tallennetaan uusi rivi vain, jos samannimistä domainia ei ole haettu samana päivänä. Olemassa olevalle riville päivitetään kuitenkin viimeisiksi noudettu IP/FQDN ja latenssi. 
+
+Unix-pohjaisilla käyttöjärjestelmillä yli millisekunnin latenssi näytetään taulukossa yhden desimaalin tarkkuudella ja alle millisekunnin latenssi kolmen desimaalin tarkkuudella. Windowsilla latenssi on aina (myös Domain Lookup -näkymässä) kokonaislukuna.

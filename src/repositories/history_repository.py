@@ -55,11 +55,13 @@ class HistoryRepository:
         else:
             if platform_os().lower() != "windows":
                 ping = ping[9:-5] + " ms"
+                if ping[-4] == "0":
+                    ping = ping[:-5] + " ms"
             else:
                 ping = ping[9:]
 
         cursor.execute(
-            'INSERT OR IGNORE INTO history (host, address, ping) VALUES (?, ?, ?)',
+            'INSERT OR REPLACE INTO history (host, address, ping) VALUES (?, ?, ?)',
             (host, address, ping))
 
         self._connection.commit()

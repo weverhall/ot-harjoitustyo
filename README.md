@@ -41,9 +41,7 @@ poetry run invoke start
 
 ## Testaus ja Pylint
 
-*Testit optimoitu Unix-järjestelmille, eli Windows toimivuudesta ei takeita.*
-
-Suorita testit:
+Suorita testit (Windows toimivuudesta ei takeita):
 
 ```bash
 poetry run invoke test

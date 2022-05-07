@@ -24,4 +24,5 @@
 |  3.5  |   1  | käyttöohje ja suurin osa docstring-kommenteista tehty, github release 2 |
 |  5.5  |   2  | korjattu tietokannan toimivuutta ja riippuvuuksia, tehty loput docstring-kommenteista |
 |  6.5  |   2  | tehty tietokannalle testejä |
-|  yht. | =95  |
+|  7.5  |   2  | lisää testejä, saatu testitietokanta toimimaan |
+|  yht. | =97  |

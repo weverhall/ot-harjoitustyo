@@ -41,7 +41,11 @@ poetry run invoke start
 
 ## Testaus ja Pylint
 
-Suorita testit (huom! tyhjentää tietokannan):
+*Huom! Testien suoritus tyhjentää tietokannan.*
+
+*Testit optimoitu Unix-järjestelmille, eli Windows toimivuudesta ei takeita.*
+
+Suorita testit:
 
 ```bash
 poetry run invoke test

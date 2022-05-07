@@ -41,8 +41,6 @@ poetry run invoke start
 
 ## Testaus ja Pylint
 
-*Huom! Testien suoritus tyhjentää tietokannan.*
-
 *Testit optimoitu Unix-järjestelmille, eli Windows toimivuudesta ei takeita.*
 
 Suorita testit:

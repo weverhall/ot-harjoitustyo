@@ -4,3 +4,4 @@ htmlcov
 .coverage
 __init__.pyc
 database.db
+test-database.db

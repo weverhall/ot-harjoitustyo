@@ -56,10 +56,11 @@ class HistoryRepository:
             ping = "?"
         else:
             if platform_os().lower() != "windows":
-                ping = ping[9:-5].rstrip("0") + " ms"
+                ping = full_ping
+                ping = str(round(float(ping), 1)).rstrip("0") + " ms"
                 if ping[0] == "0":
                     ping = full_ping.rstrip("0") + " ms"
-                elif ping.rstrip(" ms")[-1] == ".":
+                if ping.rstrip(" ms")[-1] == ".":
                     ping = ping.rstrip(" ms")
                     ping = ping.rstrip(".") + " ms"
             else:

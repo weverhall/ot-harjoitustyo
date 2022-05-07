@@ -1,6 +1,7 @@
 import unittest
 import datetime
 import validators
+from platform import system as platform_os
 from services.lookup_service import NetworkLookup
 from repositories.history_repository import(
     history_repository as default_history_repository)
@@ -46,6 +47,10 @@ class TestLookupService(unittest.TestCase):
     def test_finds_taken_domain_correct_fqdn(self):
         self.assertEqual(self.lookup.domain_lookup("128.214.9.98")[:45],
                          "Domain is taken (FQDN: melkki.cs.helsinki.fi)")
+
+    def test_times_out_domain_ping(self):
+        self.assertEqual(self.lookup.domain_lookup("124.240.242.119")[-57:],
+                        "Pinging process timed out (severe latency or packet loss)")
 
     def test_own_public_ip_is_valid(self):
         self.assertTrue([validators.ipv6(self.lookup.find_own_public_ip()[11:-8]) or

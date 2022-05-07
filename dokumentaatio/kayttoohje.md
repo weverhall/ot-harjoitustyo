@@ -32,6 +32,6 @@ Molemmista näkymistä pääsee takaisin aloitusnäkymään vasemmassa ylälaida
 
 Tiedot on järjestetty taulukossa ensisijaisesti päivämäärän mukaan ja toissijaisesti haetun domainin ensimmäisen aakkosen tai numeron mukaan.
 
-Toiston estämiseksi tietokantatauluun tallennetaan uusi rivi vain, jos samannimistä domainia ei ole haettu samana päivänä. Olemassa olevalle riville päivitetään kuitenkin viimeisiksi noudettu IP/FQDN ja latenssi. 
+Toiston estämiseksi tietokantatauluun tallennetaan uusi rivi vain, jos samannimistä domainia ei ole haettu samana päivänä. Olemassa olevalle riville päivitetään kuitenkin viimeiseksi noudettu IP/FQDN ja latenssi. 
 
-Unix-pohjaisilla käyttöjärjestelmillä yli millisekunnin latenssi näytetään taulukossa yhden desimaalin tarkkuudella ja alle millisekunnin latenssi kolmen desimaalin tarkkuudella. Windowsilla latenssi on sovelluksessa aina (myös Domain Lookup -näkymässä) kokonaislukuna.
+Unix-pohjaisilla käyttöjärjestelmillä yli millisekunnin latenssi pyöristetään taulukossa yhden desimaalin tarkkuuteen ja alle millisekunnin latenssi kolmen desimaalin tarkkuuteen. Windowsilla latenssi on sovelluksessa aina (siis myös Domain Lookup -näkymässä) kokonaislukuna.

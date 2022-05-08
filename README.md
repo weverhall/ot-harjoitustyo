@@ -2,7 +2,7 @@
 
 Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
-- Verkkotunnusten saatavuushaku IP-osoitteen tai domainnimen perusteella
+- Verkkotunnusten saatavuushaku IP-osoitteen tai domain-nimen perusteella
   - Varatun domainin IP:n tai FQDN:n nouto riippuen haun tyypistä
   - Latenssin mittaus
   - Hakuhistorian tallennus ja poisto

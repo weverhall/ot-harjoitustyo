@@ -8,7 +8,7 @@
 
 - Uuden projektin sarastus, eli tietoverkkosovelluksen alku
 - Lisätty NetworkLookup-luokka, joka vastaa sovelluslogiikan koodista
-  - Verkkotunnusten (engl. domain) saatavuuden haku isäntänimen (engl. hostname) perusteella
+  - Verkkotunnusten saatavuuden haku domain-nimen perusteella
     - Varatun verkkotunnuksen IP:n haku
   - Omien IP- ja MAC-osoitteiden nouto
     - IP määritelty joko yksityiseksi tai julkiseksi noudetun osoitteen perusteella
@@ -35,4 +35,5 @@
 
 ## Viikko 7
 
-- Lisätty TestHistoryRepository-luokka tietokannan testejä varten
+- Lisätty TestHistoryRepository-luokka tietokannan testeille
+- Lisätty tarpeelliset tiedostot ja tiedostopolut testitietokantaa varten

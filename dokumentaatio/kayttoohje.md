@@ -22,9 +22,15 @@ poetry run invoke start
 
 Aloitusnäkymässä käyttäjälle näkyy keskeisimmät verkkosovitinosoitteet sekä kaksi nappia: Domain Lookup ja Domain History.
 
+![Main View](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/main.png "Main View")
+
 Domain Lookup -nappia painaessa siirrytään näkymään, jossa voi antaa domainin joko IP- tai nimimuotoisena. Domainin ollessa varattu, näytetään sen tietoja ja samalla tallennetaan ne automaattisesti tietokantaan. 
 
+![Domain Lookup](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/lookup.png "Domain Lookup")
+
 Domain History -napilla pääsee näkemään kyseisiä taulukkotietoja (haettu domain, sen erimuotoinen osoite, latenssi ja hakupäivämäärä). Näkymässä on Clear History -nappi, joka tyhjentää tietokannan.
+
+![Domain History](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/history.png "Domain History")
 
 Molemmista näkymistä pääsee takaisin aloitusnäkymään vasemmassa ylälaidassa sijaitsevaa nuolta painamalla.
 

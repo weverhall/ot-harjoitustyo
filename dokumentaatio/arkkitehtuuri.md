@@ -23,9 +23,9 @@ classDiagram
     }
 ```
 
-Hakutoiminto on eriytetty domain_lookup-funktioon ja sen alifunktioon domain_ping. Nimensä mukaisesti, domain_lookup-funktion vastuulla on domainin saatavuuden ja IP- tai FQDN-osoitteen nouto. Myös tietokantaan tallennus tapahtuu automaattisesti tässä funktiossa. Funktio kutsuu domain_pingiä selvittääkseen latenssin, jos domain osoittautui varatuksi.
+Hakutoiminto on eriytetty domain_lookup-metodiin ja sen alifunktioon domain_ping. Nimensä mukaisesti, domain_lookupin vastuulla on domainin saatavuuden ja IP- tai FQDN-osoitteen nouto. Se kutsuu domain_pingiä selvittääkseen latenssin, jos domain osoittautui varatuksi. Myös tietokantaan tallennus tapahtuu automaattisesti domain_lookup-metodissa.
 
-Funktioista find-alkuiset hoitavat sovelluksen alkunäkymässä olevien verkkosovitinosoitteiden noudon.
+Metodeista find-alkuiset hoitavat sovelluksen alkunäkymässä olevien verkkosovitinosoitteiden noudon.
 
 Hakuhistoria voidaan noutaa taulukkoon ja poistaa tietokannasta history-metodien avulla, joilla kutsutaan history_repositorystä injektoituja toimintoja.
 

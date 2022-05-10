@@ -49,11 +49,11 @@ class TestLookupService(unittest.TestCase):
 
     def test_times_out_domain_ping(self):
         self.assertEqual(self.lookup.domain_lookup("game8.jp")[-57:],
-                        "Pinging process timed out (severe latency or packet loss)")
+                         "Pinging process timed out (severe latency or packet loss)")
 
     def test_handles_unreachable_domain(self):
         self.assertEqual(self.lookup.domain_lookup("124.240.242.119")[-53:],
-                        "Pinging process failed (destination port unreachable)")
+                         "Pinging process failed (destination port unreachable)")
 
     def test_own_public_ip_is_valid(self):
         self.assertTrue([validators.ipv6(self.lookup.find_own_public_ip()[11:-8]) or
@@ -67,11 +67,13 @@ class TestLookupService(unittest.TestCase):
         self.assertTrue(validators.mac_address(self.lookup.find_mac()[5:-6]))
 
     def test_lookup_fetches_row_correctly(self):
-        self.history.insert("melkki.cs.helsinki.fi", "128.214.9.98", "Latency: 0.432 ms")
-        self.assertEqual(self.lookup.fetch_history(),\
-            [["melkki.cs.helsinki.fi", "128.214.9.98", "0.432 ms", self.current_date]])
+        self.history.insert("melkki.cs.helsinki.fi",
+                            "128.214.9.98", "Latency: 0.432 ms")
+        self.assertEqual(self.lookup.fetch_history(),
+                         [["melkki.cs.helsinki.fi", "128.214.9.98", "0.432 ms", self.current_date]])
 
     def test_lookup_clears_table(self):
-        self.history.insert("melkki.cs.helsinki.fi", "128.214.9.98", "Latency: 0.432 ms")
+        self.history.insert("melkki.cs.helsinki.fi",
+                            "128.214.9.98", "Latency: 0.432 ms")
         self.lookup.clear_history()
         self.assertEqual(self.lookup.fetch_history(), [])

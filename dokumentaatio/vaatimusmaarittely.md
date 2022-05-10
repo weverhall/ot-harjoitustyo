@@ -16,7 +16,7 @@ Päävalikossa käyttäjä näkee MAC- ja IP-osoitteensa. Tästä valikosta pä�
 
 ### Perustoiminnallisuus
 
-- :heavy_check_mark: Verkkotunnusten saatavuuden haku domainnimen perusteella
+- :heavy_check_mark: Verkkotunnusten saatavuuden haku domain-nimen perusteella
   - :heavy_check_mark: Varatun verkkotunnuksen IP:n nouto
 - :heavy_check_mark: Käyttäjän IP- ja MAC-osoitteen nouto
   - :heavy_check_mark: Osoitetyyppien tarkastus

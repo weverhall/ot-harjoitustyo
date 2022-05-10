@@ -30,11 +30,11 @@ class HistoryView:
         self._frame.destroy()
 
     def _display_history_table(self):
-        """Renders treeview widget to frame"""      
+        """Renders treeview widget to frame"""
 
         columns = ("Domain", "IP/FQDN", "Ping", "Date")
         tree = ttk.Treeview(master=self._frame,
-                            columns=columns, 
+                            columns=columns,
                             show="headings")
         tree.heading("Domain", text="Domain")
         tree.heading("IP/FQDN", text="IP/FQDN")
@@ -45,18 +45,17 @@ class HistoryView:
         tree.column("Ping", minwidth=85, width=85)
         tree.column("Date", minwidth=85, width=85)
 
-
         rows = self._network_lookup.fetch_history()
         count = 0
         for row in rows:
             if count % 2 == 0:
-                tree.insert("", tkinter.END, 
-                values=(row[0], row[1], row[2], row[3]),
-                tags="even_row")
+                tree.insert("", tkinter.END,
+                            values=(row[0], row[1], row[2], row[3]),
+                            tags="even_row")
             else:
-                tree.insert("", tkinter.END, 
-                values=(row[0], row[1], row[2], row[3]),
-                tags="odd_row")
+                tree.insert("", tkinter.END,
+                            values=(row[0], row[1], row[2], row[3]),
+                            tags="odd_row")
             count += 1
 
         scrollbar = ttk.Scrollbar(master=self._frame,
@@ -66,7 +65,7 @@ class HistoryView:
         tree.configure(yscroll=scrollbar.set, height=15)
         tree.tag_configure("even_row", background="white")
         tree.tag_configure("odd_row", background="aliceblue")
-        
+
         style = ttk.Style()
         style.theme_use("default")
         style.map("Treeview")

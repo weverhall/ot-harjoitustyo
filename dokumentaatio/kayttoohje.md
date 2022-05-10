@@ -20,7 +20,7 @@ poetry run invoke start
 
 ## Navigointi
 
-Aloitusnäkymässä käyttäjälle näkyy keskeisimmät verkkosovitinosoitteet sekä kaksi nappia: Domain Lookup ja Domain History.
+Aloitusnäkymässä käyttäjä näkee keskeisimmät verkkosovitinosoitteensa sekä kaksi nappia: Domain Lookup ja Domain History.
 
 ![Main View](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/main.png "Main View")
 
@@ -38,6 +38,6 @@ Molemmista näkymistä pääsee takaisin aloitusnäkymään vasemmassa ylälaida
 
 Tiedot on järjestetty taulukossa ensisijaisesti päivämäärän mukaan ja toissijaisesti haetun domainin ensimmäisen aakkosen tai numeron mukaan.
 
-Toiston estämiseksi tietokantatauluun tallennetaan uusi rivi vain, jos samannimistä domainia ei ole haettu samana päivänä. Olemassa olevalle riville päivitetään kuitenkin viimeiseksi noudettu IP/FQDN ja latenssi. 
+Toiston estämiseksi tietokantatauluun tallennetaan uusi rivi vain, jos samannimistä domainia ei ole haettu samana päivänä. Olemassa olevalle riville päivitetään kuitenkin viimeiseksi noudettu IP/FQDN ja latenssi.
 
 Unix-pohjaisilla käyttöjärjestelmillä yli millisekunnin latenssi pyöristetään taulukossa yhden desimaalin tarkkuuteen ja alle millisekunnin latenssi kolmen desimaalin tarkkuuteen. Windowsilla latenssi on sovelluksessa aina (siis myös Domain Lookup -näkymässä) kokonaislukuna.

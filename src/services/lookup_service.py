@@ -69,7 +69,8 @@ class NetworkLookup:
         try:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
-                pinging = subprocess.Popen((popen_args), stdout=subprocess.PIPE)
+                pinging = subprocess.Popen(
+                    (popen_args), stdout=subprocess.PIPE)
                 output = str(pinging.communicate(timeout=0.85)[0])
                 pinging.terminate()
                 if "unreachable" in output or "100%" in output:
@@ -156,8 +157,7 @@ class NetworkLookup:
         if validators.mac_address(formatted_mac) is not True:
             return "Failed to fetch MAC address"
 
-        second_least_significant_bit = str(bin(int(formatted_mac[:2], 16)))[
-            2:].zfill(8)[-2]
+        second_least_significant_bit = str(bin(int(formatted_mac[:2], 16)))[2:].zfill(8)[-2]
         if second_least_significant_bit == "0":
             mac_type = "UAA"
         elif second_least_significant_bit == "1":

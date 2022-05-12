@@ -26,5 +26,5 @@
 |  6.5  |   2  | tehty tietokannalle testejä |
 |  7.5  |   2  | lisää testejä, testitietokanta saatu toimimaan |
 |  8.5  |   1  | käyttöohjeeseen kuvia ja dokumentaation siistimistä |
-|  10.5 |      |     |
+| 12.5  |      |    |
 |  yht. | =98  |

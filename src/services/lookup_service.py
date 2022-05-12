@@ -69,8 +69,7 @@ class NetworkLookup:
         try:
             if platform_os().lower() == "windows":
                 popen_args = ["ping", "-n", "1", host]
-                pinging = subprocess.Popen(
-                    (popen_args), stdout=subprocess.PIPE)
+                pinging = subprocess.Popen((popen_args), stdout=subprocess.PIPE)
                 output = str(pinging.communicate(timeout=0.85)[0])
                 pinging.terminate()
                 if "unreachable" in output or "100%" in output:

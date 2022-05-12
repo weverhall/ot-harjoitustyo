@@ -17,6 +17,7 @@ Ohjelma toimii yleisimmillä Linux, macOS ja Windows versioilla.
 
 - [Käyttöohje](./dokumentaatio/kayttoohje.md)
 - [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
+- [Testausdokumentti](./dokumentaatio/testaus.md)
 - [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)

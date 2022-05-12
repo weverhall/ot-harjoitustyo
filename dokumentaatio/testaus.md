@@ -10,9 +10,9 @@ Testiluokan TestHistoryRepository vastuulla on taas automaatiotestata tietokanta
 
 ### Testauskattavuus
 
-Käyttöliittymäkerrosta ja sovelluksen käynnistäviä tiedostoja index.py ja build.py lukuunottamatta testauksen haaraumakattavuus on x%
+Käyttöliittymäkerrosta ja sovelluksen käynnistäviä tiedostoja index.py ja build.py lukuunottamatta testauksen haaraumakattavuus on 80%.
 
-(kuva)
+![Coverage Report](https://raw.githubusercontent.com/weverhall/ot-harjoitustyo/master/dokumentaatio/kuvat/coverage.png "Coverage Report")
 
 Automaatiotestauksen ulkopuolelle jäivät Windows-spesifit koodiosiot useasta luokasta. Lisäksi oman IP- ja MAC-osoitteen oikeellisuuden testaus automaattisesti osoittautui haastavaksi.
 

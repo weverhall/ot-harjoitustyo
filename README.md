@@ -1,5 +1,7 @@
 # NetLookApp
 
+[README in English](./dokumentaatio/english.md)
+
 Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 
 - Verkkotunnusten saatavuushaku IP-osoitteen tai domain-nimen perusteella
@@ -28,7 +30,7 @@ Ohjelma toimii yleisimmillä Linux, macOS ja Windows versioilla.
 - [Asenna](https://python-poetry.org/docs/#installation) Poetry koneellesi
 - [Lataa](https://github.com/weverhall/ot-harjoitustyo/releases/tag/final) ja pura sovelluksen viimeisin GitHub-julkaisu
 
-Siirry vielä komentorivillä "ot-harjoitustyo" kansioon, niin olet valmis suorittamaan Poetry-komentoja.
+Siirry vielä komentorivillä `ot-harjoitustyo` kansioon, niin olet valmis suorittamaan Poetry-komentoja.
 
 ## Käynnistys
 

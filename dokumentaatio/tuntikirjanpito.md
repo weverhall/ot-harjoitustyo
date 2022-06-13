@@ -27,4 +27,6 @@
 |  7.5  |   2  | lisää testejä, testitietokanta saatu toimimaan |
 |  8.5  |   1  | käyttöohjeeseen kuvia ja dokumentaation siistimistä |
 | 12.5  |   2  | tehty testausdokumentti, viimeiset refaktoroinnit ja loppupalautus, näköjään myös saavutettu 100 tuntia ohtea :) |
-|  yht. | =100 |
+| 12.6  |   1  | siistitty dokumentaatiota |
+| 13.6  |   1  | kirjoitettu vielä lyhyt, englanninkielinen readme |
+|  yht. | =102 |

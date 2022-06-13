@@ -1,8 +1,8 @@
 # NetLookApp
 
-NetLookApp is a small program that retrieves domain's availability, IP, FQDN and ping. Domain information gets stored in an SQLite database. 
+NetLookApp is a small, cross-platform program that finds domain's availability, IP, FQDN and ping. Domain information gets stored in an SQLite database.
 
-Also fetches your public and private IPs, MAC address and address types.
+In addition, the app retrieves your public and private IP, MAC address and address types.
 
 ## Preparation
 
@@ -10,7 +10,7 @@ Also fetches your public and private IPs, MAC address and address types.
 - [Install](https://python-poetry.org/docs/#installation) Poetry
 - [Download](https://github.com/weverhall/ot-harjoitustyo/releases/tag/final) and extract the latest GitHub-release
 
-Using command line, navigate to the `ot-harjoitustyo` folder and you're ready to execute Poetry commands.
+Using the command line, navigate to `ot-harjoitustyo` folder and you're ready to execute Poetry commands.
 
 ## Launch
 

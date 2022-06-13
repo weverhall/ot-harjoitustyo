@@ -1,6 +1,6 @@
 # NetLookApp
 
-[README in English](./dokumentaatio/english.md)
+[A brief overview in English](./dokumentaatio/english.md)
 
 Sovellus tarjoaa osoitteisiin liittyviä tietoverkkopalveluja:
 

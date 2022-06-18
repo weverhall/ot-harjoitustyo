@@ -44,13 +44,13 @@ poetry run invoke start
 
 ## Testaus ja Pylint
 
-Suorita testit (Windows toimivuudesta ei takeita):
+Suorita testit:
 
 ```bash
 poetry run invoke test
 ```
 
-Luo testikattavuusraportti htmlcov-kansioon:
+Luo testikattavuusraportti `htmlcov` kansioon:
 
 ```bash
 poetry run invoke coverage-report
